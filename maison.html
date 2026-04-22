@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=1440"/>
+<title>Yan Long — Maison</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Noto+Serif+SC:wght@300;400;500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f5efe3;
+  --paper-2:#ede5d2;
+  --ink:#211c1a;
+  --ink-soft:#4c4440;
+  --mute:#8a8278;
+  --aubergine:#5b1e5a;
+  --aubergine-soft:#6e2a6e;
+  --gold:#aa8c30;
+  --gold-soft:#c2a54a;
+  --line:rgba(33,28,26,0.15);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--paper);color:var(--ink);font-family:"Cormorant Garamond",serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%;height:100%;object-fit:cover}
+.ui{font-family:"Inter",sans-serif;font-weight:400;letter-spacing:.08em}
+.sc{font-family:"Noto Serif SC",serif}
+.container{max-width:1360px;margin:0 auto;padding:0 40px}
+.wide{max-width:100%;margin:0 auto;padding:0 40px}
+
+/* NAV — masthead style */
+nav.top{padding:32px 0 20px;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;background:rgba(245,239,227,.95);backdrop-filter:blur(10px)}
+nav.top .row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:40px}
+nav.top .links{display:flex;gap:36px}
+nav.top .links a{font-family:"Inter",sans-serif;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--ink-soft)}
+nav.top .links a:hover{color:var(--aubergine)}
+nav.top .brand{text-align:center}
+nav.top .brand .chi{font-family:"Noto Serif SC",serif;font-size:36px;color:var(--aubergine);letter-spacing:.2em;font-weight:500;line-height:1}
+nav.top .brand .en{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:15px;color:var(--ink);letter-spacing:.4em;margin-top:6px}
+nav.top .r{display:flex;justify-content:flex-end;align-items:center;gap:20px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;font-family:"Inter",sans-serif;font-size:10px;letter-spacing:.32em;text-transform:uppercase;cursor:pointer;border:1px solid transparent;transition:all 200ms;font-weight:400}
+.btn-p{background:var(--aubergine);color:var(--paper);border-color:var(--aubergine)}
+.btn-p:hover{background:var(--ink);border-color:var(--ink)}
+.btn-o{background:transparent;color:var(--aubergine);border-color:var(--aubergine)}
+.btn-o:hover{background:var(--aubergine);color:var(--paper)}
+.btn-g{background:var(--gold);color:var(--paper);border-color:var(--gold)}
+.btn-g:hover{background:var(--aubergine);border-color:var(--aubergine)}
+
+/* Masthead bar */
+.masthead{border-bottom:1px solid var(--line);padding:14px 0}
+.masthead .row{display:flex;justify-content:space-between;font-family:"Inter",sans-serif;font-size:10px;letter-spacing:.3em;color:var(--mute);text-transform:uppercase}
+.masthead .row .gold{color:var(--gold)}
+
+/* HERO */
+.hero{padding:80px 0 100px}
+.hero .grid{display:grid;grid-template-columns:5fr 6fr;gap:80px;align-items:center}
+.hero .kicker{font-family:"Inter",sans-serif;font-size:10px;letter-spacing:.4em;color:var(--gold);text-transform:uppercase;margin-bottom:28px;display:flex;align-items:center;gap:14px}
+.hero .kicker::before{content:"";display:inline-block;width:44px;height:1px;background:var(--gold)}
+.hero h1{font-family:"Cormorant Garamond",serif;font-weight:300;font-size:128px;line-height:.96;letter-spacing:-.025em;color:var(--ink)}
+.hero h1 em{font-style:italic;color:var(--aubergine);font-weight:400}
+.hero h1 .gold{color:var(--gold)}
+.hero .sub{margin-top:36px;display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:start;padding-top:28px;border-top:1px solid var(--line)}
+.hero .sub .chi{font-family:"Noto Serif SC",serif;font-size:52px;color:var(--aubergine);letter-spacing:.2em;line-height:1;font-weight:400}
+.hero .sub p{font-size:20px;line-height:1.55;color:var(--ink-soft);font-style:italic;font-weight:300}
+.hero .ctas{margin-top:44px;display:flex;gap:14px;align-items:center}
+.hero-img{position:relative;aspect-ratio:4/5;overflow:hidden}
+.hero-img img{filter:saturate(0.95) contrast(1.02)}
+.hero-img .corner{position:absolute;top:24px;left:24px;font-family:"Inter",sans-serif;font-size:10px;letter-spacing:.3em;color:var(--paper);text-transform:uppercase;background:rgba(91,30,90,0.85);padding:10px 14px}
+.hero-img .cap{position:absolute;bottom:-1px;left:-1px;right:-1px;background:var(--paper);padding:20px 24px;border-top:1px solid var(--gold)}
+.hero-img .cap .cchi{font-family:"Noto Serif SC",serif;font-size:22px;color:var(--aubergine);letter-spacing:.2em;margin-bottom:4px}
+.hero-img .cap .cen{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:20px;color:var(--ink)}
+
+/* Numbers — editorial stats */
+.stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:32px 0;display:grid;grid-template-columns:repeat(4,1fr);margin-top:80px}
+.stats>div{padding:0 28px;border-left:1px solid var(--line)}
+.stats>div:first-child{border-left:none}
+.stats .n{font-family:"Cormorant Garamond",serif;font-size:56px;color:var(--aubergine);font-weight:300;line-height:1;letter-spacing:-.01em}
+.stats .n em{font-style:italic;color:var(--gold)}
+.stats .l{font-family:"Inter",sans-serif;font-size:10px;letter-spacing:.3em;color:var(--mute);text-transform:uppercase;margin-top:10px}
+
+/* Feature section — editorial spread */
+.feature{padding:140px 0;position:relative}
+.feature .head{text-align:center;margin-bottom:80px}
+.feature .head .eye{font-family:"Inter",sans-serif;font-size:10px;letter-spacing:.4em;color:var(--gold);text-transform:uppercase;margin-bottom:16px}
+.feature .head h2{font-family:"Cormorant Garamond",serif;font-weight:300;font-size:96px;line-height:1;letter-spacing:-.02em}
+.feature .head h2 em{font-style:italic;color:var(--aubergine);font-weight:400}
+.feature .head .chi{font-family:"Noto Serif SC",serif;font-size:20px;color:var(--mute);letter-spacing:.3em;margin-top:20px}
+
+.feature .spread{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.feature .spread .col.text{padding:0 40px}
+.feature .spread h3{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:56px;line-height:1.05;font-weight:400;margin-bottom:28px;letter-spacing:-.01em}
+.feature .spread h3 .gold{color:var(--gold)}
+.feature .spread p{font-size:19px;line-height:1.7;color:var(--ink-soft);margin-bottom:18px;font-weight:300}
+.feature .spread p:first-of-type::first-letter{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:72px;line-height:.8;float:left;padding:8px 12px 0 0;color:var(--aubergine)}
+.feature .spread .sig{margin-top:32px;display:flex;align-items:center;gap:20px}
+.feature .spread .sig .chi{font-family:"Noto Serif SC",serif;font-size:40px;color:var(--aubergine);letter-spacing:.15em;font-weight:500}
+.feature .spread .sig .s{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:18px;color:var(--ink-soft)}
+.feature .spread .sig .t{font-family:"Inter",sans-serif;font-size:10px;letter-spacing:.3em;color:var(--mute);text-transform:uppercase;margin-top:4px}
+.feature .spread .img{aspect-ratio:4/5;overflow:hidden;position:relative}
+.feature .spread .img::after{content:"";position:absolute;inset:0;border:1px solid var(--gold);pointer-events:none;mix-blend-mode:multiply;opacity:.25}
+
+/* Collection — dish grid */
+.collection{padding:140px 0;background:var(--paper-2);position:relative}
+.collection::before{content:"雁 龍";position:absolute;top:40px;right:60px;font-family:"Noto Serif SC",serif;font-size:220px;color:rgba(91,30,90,0.04);line-height:.8;font-weight:500;letter-spacing:.1em}
+.collection .head{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:60px;padding-bottom:20px;border-bottom:1px solid var(--line)}
+.collection .head .eye{font-family:"Inter",sans-serif;font-size:10px;letter-spacing:.4em;color:var(--gold);text-transform:uppercase;margin-bottom:16px}
+.collection .head h2{font-family:"Cormorant Garamond",serif;font-weight:300;font-size:84px;line-height:1;letter-spacing:-.02em}
+.collection .head h2 em{font-style:italic;color:var(--aubergine);font-weight:400}
+.collection .head .note{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:18px;color:var(--ink-soft);line-height:1.6;max-width:420px;justify-self:end}
+
+.collection .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
+.plate{background:var(--paper);overflow:hidden}
+.plate .img{aspect-ratio:5/6;overflow:hidden;position:relative}
+.plate .img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.3) 100%)}
+.plate .img .no{position:absolute;top:20px;left:20px;font-family:"Inter",sans-serif;font-size:10px;letter-spacing:.35em;color:var(--paper);text-transform:uppercase;background:rgba(91,30,90,.88);padding:8px 12px;z-index:2;font-weight:500}
+.plate .img .badge{position:absolute;top:20px;right:20px;background:var(--gold);color:var(--paper);padding:8px 12px;font-family:"Inter",sans-serif;font-size:9px;letter-spacing:.3em;text-transform:uppercase;z-index:2;font-weight:500}
+.plate .info{padding:28px 28px 32px}
+.plate .info .chi{font-family:"Noto Serif SC",serif;font-size:22px;color:var(--aubergine);letter-spacing:.2em;margin-bottom:10px}
+.plate .info h3{font-family:"Cormorant Garamond",serif;font-size:32px;font-weight:400;font-style:italic;line-height:1.1;letter-spacing:-.01em;margin-bottom:12px}
+.plate .info p{font-family:"Cormorant Garamond",serif;font-size:17px;line-height:1.55;color:var(--ink-soft);font-style:italic;font-weight:300;margin-bottom:20px}
+.plate .info .row{display:flex;justify-content:space-between;align-items:baseline;padding-top:18px;border-top:1px solid var(--line)}
+.plate .info .price{font-family:"Cormorant Garamond",serif;font-size:24px;color:var(--gold);font-style:italic}
+.plate .info .region{font-family:"Inter",sans-serif;font-size:10px;letter-spacing:.3em;color:var(--mute);text-transform:uppercase}
+
+/* Atelier — chef with large photo */
+.atelier{padding:160px 0}
+.atelier .grid{display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:center}
+.atelier .photo{aspect-ratio:4/5;overflow:hidden;position:relative}
+.atelier .photo .badge{position:absolute;bottom:28px;left:28px;background:var(--paper);padding:14px 18px;font-family:"Inter",sans-serif;font-size:10px;letter-spacing:.3em;color:var(--aubergine);text-transform:uppercase;font-weight:500;border-left:2px solid var(--gold)}
+.atelier .text .eye{font-family:"Inter",sans-serif;font-size:10px;letter-spacing:.4em;color:var(--gold);text-transform:uppercase;margin-bottom:20px}
+.atelier .text h2{font-family:"Cormorant Garamond",serif;font-weight:300;font-size:84px;line-height:1;letter-spacing:-.02em;margin-bottom:36px}
+.atelier .text h2 em{font-style:italic;color:var(--aubergine);font-weight:400}
+.atelier .text p{font-size:20px;line-height:1.65;color:var(--ink-soft);margin-bottom:20px;font-weight:300}
+.atelier .pillars{margin-top:44px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding-top:36px;border-top:1px solid var(--line)}
+.atelier .pillars .p{}
+.atelier .pillars .pchi{font-family:"Noto Serif SC",serif;font-size:34px;color:var(--aubergine);letter-spacing:.15em;margin-bottom:10px;font-weight:500}
+.atelier .pillars .pt{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:20px;color:var(--ink);margin-bottom:6px}
+.atelier .pillars .ps{font-family:"Inter",sans-serif;font-size:10px;letter-spacing:.25em;color:var(--mute);text-transform:uppercase}
+
+/* Room & tables */
+.rooms{padding:140px 0;background:var(--paper-2)}
+.rooms .head{text-align:center;margin-bottom:70px}
+.rooms .head .eye{font-family:"Inter",sans-serif;font-size:10px;letter-spacing:.4em;color:var(--gold);text-transform:uppercase;margin-bottom:18px}
+.rooms .head h2{font-family:"Cormorant Garamond",serif;font-weight:300;font-size:84px;line-height:1;letter-spacing:-.02em}
+.rooms .head h2 em{font-style:italic;color:var(--aubergine);font-weight:400}
+.rooms .head .chi{font-family:"Noto Serif SC",serif;font-size:18px;color:var(--mute);letter-spacing:.3em;margin-top:16px}
+.rooms .grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:20px;align-items:stretch}
+.room{background:var(--paper);overflow:hidden;display:flex;flex-direction:column}
+.room .img{aspect-ratio:4/3;overflow:hidden}
+.room .body{padding:28px 28px 32px;flex:1;display:flex;flex-direction:column}
+.room .meta{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
+.room .chi{font-family:"Noto Serif SC",serif;font-size:22px;color:var(--aubergine);letter-spacing:.2em}
+.room h3{font-family:"Cormorant Garamond",serif;font-size:30px;font-weight:400;font-style:italic;margin-bottom:10px}
+.room .cap{font-family:"Inter",sans-serif;font-size:10px;letter-spacing:.3em;color:var(--gold);text-transform:uppercase;margin-bottom:16px;font-weight:500}
+.room p{font-family:"Cormorant Garamond",serif;font-size:17px;line-height:1.55;color:var(--ink-soft);font-style:italic;font-weight:300;flex:1}
+.room .go{margin-top:18px;font-family:"Inter",sans-serif;font-size:10px;letter-spacing:.3em;color:var(--aubergine);text-transform:uppercase;font-weight:500}
+
+/* Reserve — dark aubergine panel */
+.reserve{padding:160px 0;background:var(--aubergine);color:var(--paper);position:relative;overflow:hidden}
+.reserve::before{content:"訂";position:absolute;top:-40px;right:40px;font-family:"Noto Serif SC",serif;font-size:420px;color:rgba(245,239,227,0.05);line-height:.8;font-weight:500;letter-spacing:.1em}
+.reserve .grid{display:grid;grid-template-columns:1.2fr 1fr;gap:80px;align-items:start;position:relative}
+.reserve .eye{font-family:"Inter",sans-serif;font-size:10px;letter-spacing:.4em;color:var(--gold);text-transform:uppercase;margin-bottom:24px}
+.reserve h2{font-family:"Cormorant Garamond",serif;font-weight:300;font-size:104px;line-height:.98;letter-spacing:-.02em;margin-bottom:32px;color:var(--paper)}
+.reserve h2 em{font-style:italic;color:var(--gold);font-weight:400}
+.reserve p{font-size:20px;line-height:1.6;color:rgba(245,239,227,.75);margin-bottom:20px;font-style:italic;font-weight:300;max-width:540px}
+.reserve .rows{margin-top:40px;max-width:540px}
+.reserve .rows .r{display:grid;grid-template-columns:160px 1fr;padding:16px 0;border-bottom:1px solid rgba(245,239,227,0.2)}
+.reserve .rows .k{font-family:"Inter",sans-serif;font-size:10px;letter-spacing:.3em;color:var(--gold);text-transform:uppercase;padding-top:4px}
+.reserve .rows .v{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:20px;color:var(--paper);line-height:1.3}
+.reserve .card{background:rgba(245,239,227,0.06);border:1px solid rgba(245,239,227,0.18);padding:44px 40px}
+.reserve .card .img{aspect-ratio:4/3;overflow:hidden;margin-bottom:28px}
+.reserve .card h3{font-family:"Cormorant Garamond",serif;font-size:36px;font-style:italic;font-weight:400;margin-bottom:12px;color:var(--paper)}
+.reserve .card .sub{font-family:"Noto Serif SC",serif;font-size:20px;color:var(--gold);letter-spacing:.2em;margin-bottom:28px;font-weight:500}
+.reserve .card p{color:rgba(245,239,227,.7);font-style:italic;font-size:17px;margin-bottom:28px;max-width:none}
+
+footer{background:var(--ink);color:var(--paper);padding:50px 0 32px}
+footer .row{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+footer .chi{font-family:"Noto Serif SC",serif;font-size:34px;color:var(--gold);letter-spacing:.2em;font-weight:500}
+footer .meta{font-family:"Inter",sans-serif;font-size:10px;letter-spacing:.3em;color:rgba(245,239,227,.5);text-transform:uppercase}
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <div class="container row">
+    <span>Vol. 07 · Issue 04 · A Quarterly of the Kitchen</span>
+    <span class="gold">★ Best Peking Duck in Thailand · Phuket City Hotel</span>
+    <span>September 2026 · ฿ Gratis</span>
+  </div>
+</div>
+
+<nav class="top">
+  <div class="container row">
+    <div class="links">
+      <a href="#">The House</a><a href="#">Menu</a><a href="#">Atelier</a><a href="#">Rooms</a><a href="#">Visit</a>
+    </div>
+    <div class="brand">
+      <div class="chi">雁 龍</div>
+      <div class="en">YAN · LONG · MAISON</div>
+    </div>
+    <div class="r">
+      <span class="ui" style="font-size:10px;letter-spacing:.3em;color:var(--mute);text-transform:uppercase">Concierge · 061-172-9697</span>
+      <a href="#" class="btn btn-p">Reserve</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container grid">
+    <div>
+      <div class="kicker">La Maison · Since 2019</div>
+      <h1>A <em>very slow</em><br/>table, in the<br/>city of <span class="gold">Phuket.</span></h1>
+      <div class="sub">
+        <div class="chi">雁龍</div>
+        <p>An authentic Chinese house in Phuket Old Town, one floor above Phangnga Road. Szechwan, Cantonese, Peking — by way of a state kitchen in Chengdu, 1998.</p>
+      </div>
+      <div class="ctas">
+        <a href="#" class="btn btn-p">Reserve a Table</a>
+        <a href="#" class="btn btn-o">The Tasting Menu · ฿ 3,800</a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <span class="corner">01 — Signature · Xiaolongbao</span>
+      <img src="https://images.unsplash.com/photo-1518983546435-91f8b87fe561?w=1400&q=85" alt="Xiaolongbao"/>
+      <div class="cap">
+        <div class="cchi">小 籠 包</div>
+        <div class="cen">Xiaolongbao, folded by hand each morning.</div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="stats">
+      <div><div class="n">87</div><div class="l">Dishes on the menu</div></div>
+      <div><div class="n">22<em>y</em></div><div class="l">Dim sum chef's tenure</div></div>
+      <div><div class="n">6</div><div class="l">Regions of China</div></div>
+      <div><div class="n">2019</div><div class="l">House opened</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="feature">
+  <div class="container">
+    <div class="head">
+      <div class="eye">Cover Story · September</div>
+      <h2>A <em>kitchen</em> of Chengdu,<br/>on the first floor of a <em>Phuket</em> hotel.</h2>
+      <div class="chi">食 之 有 道</div>
+    </div>
+    <div class="spread">
+      <div class="col text">
+        <h3>"We are a very small house<br/>with a <span class="gold">very long memory.</span>"</h3>
+        <p>When Chef Wei Jianhong opened Yan Long in 2019, he was fifty-four years old and had already spent thirty years in kitchens he did not own. He brought with him one recipe book, handwritten, and a carbon steel wok seasoned since 1998.</p>
+        <p>The house he founded — on the first floor of the Royal Phuket City Hotel — does not seat more than ninety. It does not serve fusion. It does not use a gas-pressure fryer. The techniques are the ones his mother taught him, at the temperatures his grandmother taught her.</p>
+        <div class="sig">
+          <span class="chi">魏</span>
+          <div>
+            <div class="s">Chef Wei Jianhong · 主廚</div>
+            <div class="t">Chef de Cuisine · Founder</div>
+          </div>
+        </div>
+      </div>
+      <div class="img">
+        <img src="https://images.unsplash.com/photo-1526318896980-cf78c088247c?w=1400&q=85" alt=""/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="collection">
+  <div class="container">
+    <div class="head">
+      <div>
+        <div class="eye">La Collection · The Menu</div>
+        <h2>Six <em>signatures,</em><br/>from a menu of eighty-seven.</h2>
+      </div>
+      <p class="note">Our full menu carries eighty-seven entries across six regional traditions. What follows are six that have been on the menu — word for word — since the day we opened.</p>
+    </div>
+
+    <div class="grid">
+      <div class="plate">
+        <div class="img">
+          <span class="no">№ 01 · Signature</span>
+          <span class="badge">★ House</span>
+          <img src="https://images.unsplash.com/photo-1518983546435-91f8b87fe561?w=1200&q=85" alt=""/>
+        </div>
+        <div class="info">
+          <div class="chi">小 籠 包</div>
+          <h3>Xiaolongbao, Shanghai</h3>
+          <p>Eighteen folds of thin wheat skin around a pork-and-ginger broth. Steamed six minutes, served instantly.</p>
+          <div class="row"><span class="price">฿ 320</span><span class="region">Jiangsu · 江</span></div>
+        </div>
+      </div>
+      <div class="plate">
+        <div class="img">
+          <span class="no">№ 02 · Classic</span>
+          <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?w=1200&q=85" alt=""/>
+        </div>
+        <div class="info">
+          <div class="chi">點 心 籃</div>
+          <h3>Dim Sum Basket</h3>
+          <p>Four baskets, four fillings — prawn, pork, mushroom, chive. Served with chrysanthemum tea.</p>
+          <div class="row"><span class="price">฿ 680</span><span class="region">Guangdong · 粵</span></div>
+        </div>
+      </div>
+      <div class="plate">
+        <div class="img">
+          <span class="no">№ 03 · Wok</span>
+          <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?w=1200&q=85" alt=""/>
+        </div>
+        <div class="info">
+          <div class="chi">肉 絲 炒 麵</div>
+          <h3>Chow Mein, Silken Pork</h3>
+          <p>Hand-pulled noodles fired in a carbon-steel wok with pork shoulder, scallion, and dark soy.</p>
+          <div class="row"><span class="price">฿ 460</span><span class="region">Guangdong · 粵</span></div>
+        </div>
+      </div>
+      <div class="plate">
+        <div class="img">
+          <span class="no">№ 04 · Broth</span>
+          <img src="https://images.unsplash.com/photo-1526318896980-cf78c088247c?w=1200&q=85" alt=""/>
+        </div>
+        <div class="info">
+          <div class="chi">湯 麵</div>
+          <h3>House Soup Noodle</h3>
+          <p>Tonkotsu-style bone broth simmered fourteen hours, hand-pulled wheat noodle, soft egg, soy pork.</p>
+          <div class="row"><span class="price">฿ 420</span><span class="region">Northern · 北</span></div>
+        </div>
+      </div>
+      <div class="plate">
+        <div class="img">
+          <span class="no">№ 05 · Rice</span>
+          <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=1200&q=85" alt=""/>
+        </div>
+        <div class="info">
+          <div class="chi">揚 州 炒 飯</div>
+          <h3>Yangzhou Fried Rice</h3>
+          <p>Jasmine rice, lap cheong, shrimp, preserved vegetable, scallion. Wok hei, at 800°C.</p>
+          <div class="row"><span class="price">฿ 380</span><span class="region">Jiangsu · 江</span></div>
+        </div>
+      </div>
+      <div class="plate">
+        <div class="img">
+          <span class="no">№ 06 · Basket</span>
+          <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?w=1200&q=85" alt=""/>
+        </div>
+        <div class="info">
+          <div class="chi">小 籠 包 籠</div>
+          <h3>Steamer of Four</h3>
+          <p>Four soup dumplings in a bamboo steamer, served with black vinegar and fine ginger threads.</p>
+          <div class="row"><span class="price">฿ 280</span><span class="region">Shanghai · 滬</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="atelier">
+  <div class="container grid">
+    <div class="photo">
+      <img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?w=1400&q=85" alt="table setting"/>
+      <span class="badge">The Atelier · since 2019</span>
+    </div>
+    <div class="text">
+      <div class="eye">L'Atelier · The House</div>
+      <h2>Three <em>quiet</em><br/>inheritances.</h2>
+      <p>Every house keeps a handful of inherited gestures. Ours are three. The first is a breath — <em>wok hei</em> — the split-second alchemy of fire and oil. The second is a hand, folding. The third is patience: a duck, brined for two days before it is ever touched.</p>
+      <div class="pillars">
+        <div class="p"><div class="pchi">鑊 氣</div><div class="pt">Wok Hei</div><div class="ps">The breath, 800°C</div></div>
+        <div class="p"><div class="pchi">手 藝</div><div class="pt">Shǒu Yì</div><div class="ps">The hand, by morning</div></div>
+        <div class="p"><div class="pchi">火 候</div><div class="pt">Huǒ Hòu</div><div class="ps">The patience, in hours</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rooms">
+  <div class="container">
+    <div class="head">
+      <div class="eye">Les Salons · Private Dining</div>
+      <h2>Three <em>rooms,</em><br/>one kitchen.</h2>
+      <div class="chi">私 宴 · 家 宴 · 喜 慶</div>
+    </div>
+    <div class="grid">
+      <div class="room">
+        <div class="img"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1400&q=85" alt=""/></div>
+        <div class="body">
+          <div class="meta"><h3>La Grande Salle</h3><span class="chi">正 廳</span></div>
+          <div class="cap">Up to 90 · Main Dining Room</div>
+          <p>The principal room, curtained in oxblood linen. Round tables dressed in cream cloth with lazy-susan center plates — the setting of a Cantonese family dinner, served à la Chengdu.</p>
+          <div class="go">Explore →</div>
+        </div>
+      </div>
+      <div class="room">
+        <div class="img"><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1400&q=85" alt=""/></div>
+        <div class="body">
+          <div class="meta"><h3>La Cave</h3><span class="chi">雅 座</span></div>
+          <div class="cap">Up to 14 · Private Room</div>
+          <p>A curtained room for small celebrations. Six-course tasting, optional tea ceremony. Booked forty-eight hours in advance.</p>
+          <div class="go">Explore →</div>
+        </div>
+      </div>
+      <div class="room">
+        <div class="img"><img src="https://images.unsplash.com/photo-1592861956120-e524fc739696?w=1400&q=85" alt=""/></div>
+        <div class="body">
+          <div class="meta"><h3>Le Salon d'Honneur</h3><span class="chi">喜 慶</span></div>
+          <div class="cap">Up to 80 · Celebration Hall</div>
+          <p>Weddings, red-egg ceremonies, Lunar New Year. Ten-course service, tea ceremony on request, house-made longevity buns.</p>
+          <div class="go">Explore →</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reserve">
+  <div class="container grid">
+    <div>
+      <div class="eye">La Réservation · Visit</div>
+      <h2>Book a <em>table</em><br/>at Yan Long.</h2>
+      <p>Reservations open thirty days in advance. Walk-ins welcome, should there be a seat. Private rooms confirmed within two hours of request.</p>
+      <div class="rows">
+        <div class="r"><span class="k">Concierge</span><span class="v">061-172-9697 · LINE @yanlong</span></div>
+        <div class="r"><span class="k">Address</span><span class="v">Royal Phuket City Hotel, 1st Floor<br/>Phangnga Road, Phuket Old Town</span></div>
+        <div class="r"><span class="k">Déjeuner</span><span class="v">Daily · 11:30 — 14:30</span></div>
+        <div class="r"><span class="k">Dîner</span><span class="v">Daily · 18:00 — 22:30</span></div>
+        <div class="r"><span class="k">Dim Sum</span><span class="v">Saturdays & Sundays · 10:00 — 14:00</span></div>
+        <div class="r"><span class="k">Dress</span><span class="v">Smart casual · No shorts at dinner</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="img"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=85" alt=""/></div>
+      <h3>The Tasting Menu.</h3>
+      <div class="sub">品 鑑 · Eight Courses</div>
+      <p>Eight courses curated by Chef Wei. Two hours, thirty minutes. Tea pairing, or wine by the glass. Available lunch &amp; dinner.</p>
+      <a href="#" class="btn btn-g">Book the Tasting →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container row">
+    <span class="chi">雁 龍</span>
+    <span class="meta">© 2026 Yan Long Maison · Phuket · Food Well Told · 食 之 有 道</span>
+    <span class="meta">Facebook · Instagram · LINE @yanlong</span>
+  </div>
+</footer>
+
+</body>
+</html>
