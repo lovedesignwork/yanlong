@@ -3,7 +3,7 @@ import { Rooms } from "@/components/Rooms";
 import { Reserve } from "@/components/Reserve";
 
 export const metadata: Metadata = {
-  title: "Private Dining & Rooms — Yan Long · Maison",
+  title: "Private Dining & Rooms — Yan Long Phuket",
   description:
     "Three rooms, one kitchen. Private dining, celebrations, weddings and Lunar New Year at Yan Long, Royal Phuket City Hotel.",
 };
@@ -30,7 +30,7 @@ export default function RoomsPage() {
                 background: "var(--gold)",
               }}
             />
-            Les Salons · Private Dining
+            Private Dining
           </div>
           <h1
             className="h1-hero"

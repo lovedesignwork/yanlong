@@ -30,7 +30,7 @@ export default function MenuPage() {
                 background: "var(--gold)",
               }}
             />
-            La Carte · The Menu
+            Our Menu
             <span
               style={{
                 display: "inline-block",
@@ -78,7 +78,7 @@ export default function MenuPage() {
               fontWeight: 500,
             }}
           >
-            — La Carte · Food Well Told —
+            — Food Well Told —
           </div>
           <p
             style={{

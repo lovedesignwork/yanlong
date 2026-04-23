@@ -1,11 +1,11 @@
 /**
  * Single source of truth for all editorial copy & data.
- * Sourced from https://yanlongphuket.com — adapted for the Maison editorial voice.
+ * Sourced from https://yanlongphuket.com.
  * Replace Unsplash URLs with real /public/images/* paths once photography lands.
  */
 
 export const HOUSE = {
-  brand: { en: "YAN · LONG · MAISON" },
+  brand: { en: "YAN LONG PHUKET" },
   tagline: "Food Well Told",
   positioning: "Authentic Szechwan · South-Western China",
   award: "★ Best Peking Duck in Thailand",
@@ -23,10 +23,10 @@ export const HOUSE = {
 } as const;
 
 export const NAV_LINKS = [
-  { href: "/", label: "The House" },
+  { href: "/", label: "Home" },
   { href: "/menu", label: "Menu" },
-  { href: "/atelier", label: "Atelier" },
-  { href: "/rooms", label: "Rooms" },
+  { href: "/atelier", label: "Food Well Told" },
+  { href: "/rooms", label: "Dining Rooms" },
   { href: "/contact", label: "Contact" },
 ] as const;
 
@@ -135,28 +135,28 @@ export type Room = {
 };
 
 /**
- * Three private dining categories — adapted from the original site's
+ * Three private dining categories — from the original yanlongphuket.com:
  * "Private Dining Room", "Special Ceremony", and "Chinese Theme Restaurant".
  */
 export const ROOMS: Room[] = [
   {
-    name: "La Grande Salle",
-    capacity: "Main Dining Room · Family & Friends",
+    name: "Main Dining Hall",
+    capacity: "Main Dining · Family & Friends",
     description:
       "The principal room — a warm, refined space where families and friends gather to enjoy the authentic Chinese restaurant ambiance of Yan Long. Round tables, lazy-susan service, the unhurried rhythm of a long meal.",
     image:
       "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1400&q=85",
   },
   {
-    name: "La Salle Privée",
-    capacity: "Private Dining Room · Intimate",
+    name: "Private Dining Room",
+    capacity: "Private Dining · Intimate",
     description:
       "A curtained room for small celebrations, business dinners and intimate gatherings at the authentic Chinese restaurant in Phuket. Booked forty-eight hours in advance.",
     image:
       "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1400&q=85",
   },
   {
-    name: "Le Salon de Cérémonie",
+    name: "Celebration Hall",
     capacity: "Special Ceremony · Weddings & Events",
     description:
       "Celebrate your wedding, milestone birthday, or family reunion in our ceremonial hall. Multi-course service, tea ceremony on request, house-made longevity buns.",

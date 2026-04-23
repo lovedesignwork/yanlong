@@ -8,7 +8,7 @@ export function Rooms() {
       <div className="container-maison">
         <div style={{ textAlign: "center", marginBottom: 70 }}>
           <div className="kicker" style={{ marginBottom: 18 }}>
-            Les Salons · Private Dining
+            Private Dining
           </div>
           <h2
             className="h2-section"

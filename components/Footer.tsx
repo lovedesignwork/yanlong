@@ -40,7 +40,7 @@ export function Footer() {
             textTransform: "uppercase",
           }}
         >
-          © {new Date().getFullYear()} Yan Long Maison · Phuket · Food Well Told
+          © {new Date().getFullYear()} Yan Long Phuket · Royal Phuket City Hotel · Food Well Told
         </span>
         <span
           style={{

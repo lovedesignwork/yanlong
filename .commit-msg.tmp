@@ -1,0 +1,83 @@
+Real photography, full-bleed hero, French/Maison cleanup
+
+CONTENT
+- Strip all French phrases site-wide (La Reservation, La Carte,
+  L'Atelier, Les Salons, La Collection, La Correspondance, Maison)
+- Rename rooms to English: Main Dining Hall / Private Dining Room /
+  Celebration Hall (was La Grande Salle / Salle Privee / Salon de Ceremonie)
+- Nav: 'The House' -> 'Home', 'Atelier' -> 'Food Well Told',
+  'Rooms' -> 'Dining Rooms', remove duplicate 'Visit' (same as Reserve)
+- Cover Story kicker: 'Cover Story . The House' -> 'Authentic Chinese
+  Restaurant'; remove 'Food Well Told' tag; rename signature line to
+  'Chinese Restaurant in Phuket Town'; remove decorative drop-cap
+- Collection: kicker -> 'The Menu'; remove price + region row + No. pill
+  on every plate card (clean image + title + description only)
+- Atelier: kicker -> 'Authentic Recipes'; remove 'Since 2019' badge
+- Rooms: kicker -> 'Private Dining'; subtitle -> 'PRIVATE . FAMILY .
+  CEREMONY'
+- Reserve panel + page: kicker -> 'Reservations'
+- Email subjects + templates: 'Yan Long Maison' -> 'Yan Long Phuket'
+- Footer copyright: 'Yan Long Maison' -> 'Yan Long Phuket . Royal
+  Phuket City Hotel'
+
+PHOTOGRAPHY (all real Yan Long shots in /public/images/)
+- 50+ real photos delivered (CU/FK/MD/WD families, dishes, rooms)
+- Hero background: dining hall (main-image.jpg) - full-bleed, edge-to-edge
+- Cover Story photo: child enjoying dim sum (CU03)
+- Atelier photo: couple toasting in Silk Room (CU04)
+- Rename 'main images.jpg' -> 'main-image.jpg' for URL safety
+
+HERO REDESIGN
+- Switch from 2-column (text + photo card) to full-bleed background
+- Image as absolute full-cover (object-fit cover, center-right)
+- Lighter parchment gradient (96% -> 0% by 60%) so photo dominates
+- Parchment-color text-shadow (0 0 18-60px rgba(245,239,227, .85-.95))
+  on H1 + body so type stays legible against busy photo
+- H1 to 2 rows: 'Food / Well Told.' (was 3 rows / 152px -> 132px)
+- Subtitle on 2 explicit lines via <br/>
+- Remove photo card + No.01 caption strip
+- Reduce section min-height (was calc(100vh-89px), now padding-only)
+
+NAV LOGO
+- Replace 'Yan Long' wordmark text with brand logo image
+  (/yan-long-logo.png) - left aligned
+- Restructure: logo (left) . menu (center) . Reserve (right)
+
+CONTACT FORM (new /contact route)
+- Hero + 3-section form (Inquiry / You / Message)
+- 8 inquiry types, full validation, country phone selector
+- Server action -> emails both yanlong + marketing inboxes
+- Success state with Reply/Call action buttons in email
+
+CALENDAR PICKER (new /components/CalendarPicker.tsx)
+- Custom month-view date picker per Yan Long editorial system
+- Sharp corners, hairline borders, parchment background
+- Cormorant italic month/year title in aubergine
+- Aubergine selected, gold today-ring, parchment-2 available
+- Single-letter weekday headers (S M T W T F S)
+- Built per internal Notion spec - no third-party calendar lib
+- Wired into reservation form replacing native date input
+
+RESERVATION SIMPLIFICATION
+- Drop 3-tile service selector (Lunch/Dinner/Dim Sum)
+- Single continuous time picker 11:00 - 20:00 every 30 min
+  (matches actual hours: open 11 AM, last order 8 PM)
+- Service auto-derived from chosen time for the email
+- HOUSE.hours simplified to 'Daily . 11:00 - 20:00 / Last order 8 PM'
+
+EMAIL ROUTING
+- Both reservation + contact forms now email
+  yanlong@royalphuketcity.com + marketing@royalphuketcity.com
+- Override via comma-separated env var
+- Replace fictional Chef Wei with 'The Kitchen at Yan Long'
+
+ASSETS
+- Add yan-long-logo.png to /public for nav brand mark
+- Add 50+ real photos to /public/images/ (families, food, rooms, events)
+
+DEV
+- Strip masthead bar (Vol 07 . Issue 04 . magazine kicker)
+- Body font-family default: Cormorant -> Inter (sans body, serif display)
+- Drop Noto Serif SC from Google Fonts URL (no Chinese chars used)
+- Add explicit --font-sans, --font-serif on :root for v4 reliability
+- Strip all Chinese characters from UI (per user request)

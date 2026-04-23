@@ -1,19 +1,74 @@
 import Link from "next/link";
-import { HOUSE } from "@/lib/content";
+
+/**
+ * Parchment-color halo so hero text stays legible against the photo.
+ * Matches the parchment value (#f5efe3 / var(--paper)) used in the overlay
+ * gradient — reads as a soft glow, not a hard drop-shadow.
+ */
+const PARCHMENT_HALO =
+  "0 0 12px rgba(245,239,227,0.85), 0 0 28px rgba(245,239,227,0.65)";
+
+const PARCHMENT_HALO_STRONG =
+  "0 0 18px rgba(245,239,227,0.95), 0 0 36px rgba(245,239,227,0.85), 0 0 60px rgba(245,239,227,0.55)";
 
 export function Hero() {
   return (
-    <section style={{ padding: "80px 0 100px" }}>
-      <div
-        className="container-maison grid-2"
+    <section
+      style={{
+        position: "relative",
+        display: "flex",
+        alignItems: "center",
+        overflow: "hidden",
+        padding: "100px 0 110px",
+      }}
+    >
+      {/* ============ FULL-BLEED BACKGROUND IMAGE ============ */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/images/main-image.jpg"
+        alt=""
+        aria-hidden="true"
         style={{
-          display: "grid",
-          gridTemplateColumns: "5fr 6fr",
-          gap: 80,
-          alignItems: "center",
+          position: "absolute",
+          inset: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          objectPosition: "center right",
+          filter: "saturate(0.95) contrast(1.02)",
+          zIndex: 0,
+        }}
+      />
+
+      {/* Parchment fade — opaque enough on the left for text legibility,
+          fully transparent on the right so the dining room photo dominates */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          inset: 0,
+          background:
+            "linear-gradient(90deg, rgba(245,239,227,0.96) 0%, rgba(245,239,227,0.92) 22%, rgba(245,239,227,0.55) 38%, rgba(245,239,227,0.12) 50%, rgba(245,239,227,0) 60%)",
+          zIndex: 1,
+        }}
+      />
+
+      {/* ============ TEXT CONTENT (LEFT) ============
+          Parchment-glow text-shadow on every text element so the type stays
+          legible where it sits over the image. The shadow color matches the
+          gradient overlay (#f5efe3 / var(--paper)) so it reads as a soft halo
+          rather than a drop-shadow. */}
+      <div
+        className="container-maison"
+        style={{
+          position: "relative",
+          zIndex: 2,
+          width: "100%",
+          // applies to every child unless overridden — soft parchment halo
+          textShadow: PARCHMENT_HALO,
         }}
       >
-        <div>
+        <div style={{ maxWidth: 580 }}>
           <div className="kicker kicker-rule" style={{ marginBottom: 28 }}>
             Yan Long · Royal Phuket City
           </div>
@@ -22,18 +77,25 @@ export function Hero() {
             style={{
               fontFamily: "var(--font-serif)",
               fontWeight: 300,
-              fontSize: 152,
-              lineHeight: 0.96,
+              fontSize: 132,
+              lineHeight: 0.98,
               letterSpacing: "-0.025em",
               color: "var(--ink)",
+              // stronger halo for the giant headline
+              textShadow: PARCHMENT_HALO_STRONG,
             }}
           >
             Food
             <br />
-            <em style={{ fontStyle: "italic", color: "var(--aubergine)", fontWeight: 400 }}>
+            <em
+              style={{
+                fontStyle: "italic",
+                color: "var(--aubergine)",
+                fontWeight: 400,
+              }}
+            >
               Well
-            </em>
-            <br />
+            </em>{" "}
             <span style={{ color: "var(--gold)" }}>Told.</span>
           </h1>
 
@@ -53,11 +115,13 @@ export function Hero() {
                 fontStyle: "italic",
                 fontWeight: 400,
                 marginBottom: 14,
-                maxWidth: 520,
+                maxWidth: 580,
+                textShadow: PARCHMENT_HALO,
               }}
             >
-              An authentic Chinese restaurant in Phuket. Szechwan
-              (South-Western China) style cuisine.
+              An authentic Chinese restaurant in Phuket.
+              <br />
+              Szechwan (South-Western China) style cuisine.
             </p>
             <p
               style={{
@@ -67,6 +131,7 @@ export function Hero() {
                 color: "var(--gold)",
                 fontStyle: "italic",
                 fontWeight: 400,
+                textShadow: PARCHMENT_HALO,
               }}
             >
               "Authentic Flavors, Timeless Tradition."
@@ -88,73 +153,6 @@ export function Hero() {
             <Link href="/menu" className="btn btn-o">
               View the Menu →
             </Link>
-          </div>
-        </div>
-
-        <div
-          style={{
-            position: "relative",
-            aspectRatio: "4 / 5",
-            overflow: "hidden",
-          }}
-        >
-          <span
-            style={{
-              position: "absolute",
-              top: 24,
-              left: 24,
-              fontFamily: "var(--font-sans)",
-              fontSize: 10,
-              letterSpacing: "0.3em",
-              color: "var(--paper)",
-              textTransform: "uppercase",
-              background: "rgba(91,30,90,0.85)",
-              padding: "10px 14px",
-              zIndex: 2,
-            }}
-          >
-            01 — Signature · Xiaolongbao
-          </span>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="https://images.unsplash.com/photo-1518983546435-91f8b87fe561?w=1400&q=85"
-            alt="Xiaolongbao folded by hand"
-            className="editorial-img"
-          />
-          <div
-            style={{
-              position: "absolute",
-              bottom: -1,
-              left: -1,
-              right: -1,
-              background: "var(--paper)",
-              padding: "20px 24px",
-              borderTop: "1px solid var(--gold)",
-            }}
-          >
-            <div
-              style={{
-                fontFamily: "var(--font-sans)",
-                fontSize: 10,
-                letterSpacing: "0.3em",
-                textTransform: "uppercase",
-                color: "var(--gold)",
-                fontWeight: 500,
-                marginBottom: 6,
-              }}
-            >
-              № 01 · The Signature
-            </div>
-            <div
-              style={{
-                fontFamily: "var(--font-serif)",
-                fontStyle: "italic",
-                fontSize: 20,
-                color: "var(--ink)",
-              }}
-            >
-              Xiaolongbao, folded by hand each morning.
-            </div>
           </div>
         </div>
       </div>

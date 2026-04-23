@@ -4,7 +4,7 @@ import { Reserve } from "@/components/Reserve";
 import { HOUSE } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Contact — Yan Long · Maison",
+  title: "Contact — Yan Long Phuket",
   description: `Get in touch with Yan Long, Royal Phuket City Hotel. Concierge ${HOUSE.phone} · LINE ${HOUSE.line}. For private functions, weddings, press and general inquiries.`,
 };
 
@@ -33,7 +33,7 @@ export default function ContactPage() {
                 background: "var(--gold)",
               }}
             />
-            La Correspondance · Contact
+            Get in Touch
           </div>
           <h1
             className="h1-hero"

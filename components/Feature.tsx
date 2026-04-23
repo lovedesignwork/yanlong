@@ -4,7 +4,7 @@ export function Feature() {
       <div className="container-maison">
         <div style={{ textAlign: "center", marginBottom: 80 }}>
           <div className="kicker" style={{ marginBottom: 16 }}>
-            Cover Story · The House
+            Authentic Chinese Restaurant
           </div>
           <h2
             className="h2-section"
@@ -38,19 +38,6 @@ export function Feature() {
               Phuket Old Town.
             </em>
           </h2>
-          <div
-            style={{
-              fontFamily: "var(--font-sans)",
-              fontSize: 11,
-              color: "var(--mute)",
-              letterSpacing: "0.4em",
-              textTransform: "uppercase",
-              marginTop: 20,
-              fontWeight: 500,
-            }}
-          >
-            — Food Well Told —
-          </div>
         </div>
 
         <div
@@ -82,7 +69,6 @@ export function Feature() {
               "
             </h3>
             <p
-              className="drop-cap"
               style={{
                 fontSize: 19,
                 lineHeight: 1.7,
@@ -130,7 +116,7 @@ export function Feature() {
                   marginBottom: 6,
                 }}
               >
-                The Kitchen at Yan Long
+                Chinese Restaurant in Phuket Town
               </div>
               <div
                 style={{
@@ -152,8 +138,8 @@ export function Feature() {
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="https://images.unsplash.com/photo-1525755662778-989d0524087e?w=1400&q=85"
-              alt="The signature Peking Duck at Yan Long"
+              src="/images/CU03_child_dimsum_P.jpg"
+              alt="A young guest enjoying dim sum at Yan Long"
               className="editorial-img"
             />
           </div>

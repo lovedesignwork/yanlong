@@ -15,9 +15,9 @@ const initialState: ReserveActionState = {
 
 const ROOMS = [
   "No preference",
-  "La Grande Salle · Main Dining",
-  "La Salle Privée · Private Room",
-  "Le Salon de Cérémonie · Ceremony Hall",
+  "Main Dining Hall",
+  "Private Dining Room",
+  "Celebration Hall",
 ] as const;
 
 const OCCASIONS = [

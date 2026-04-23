@@ -2,7 +2,7 @@
 
 /**
  * CountryPhoneSelector — flag + dial-code dropdown + national number input.
- * Maison-styled: sharp corners, aubergine focus, Inter font, parchment background.
+ * Yan Long editorial styling: sharp corners, aubergine focus, Inter font, parchment background.
  *
  * Pattern adapted from the Royal Phuket City Hotel ContactForm.
  */

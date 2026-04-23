@@ -32,7 +32,7 @@ export default function AtelierPage() {
                 background: "var(--gold)",
               }}
             />
-            L'Atelier · The Kitchen
+            Food Well Told
           </div>
           <h1
             className="h1-hero"

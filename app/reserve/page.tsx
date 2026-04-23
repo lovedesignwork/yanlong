@@ -4,7 +4,7 @@ import { BookingForm } from "@/components/BookingForm";
 import { HOUSE } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Reserve a Table — Yan Long · Maison",
+  title: "Reserve a Table — Yan Long Phuket",
   description: `Reserve a table at Yan Long, Royal Phuket City Hotel. Concierge ${HOUSE.phone} · LINE ${HOUSE.line}.`,
 };
 
@@ -31,7 +31,7 @@ export default function ReservePage() {
                 background: "var(--gold)",
               }}
             />
-            La Réservation · Visit
+            Reservations
           </div>
           <h1
             className="h1-hero"

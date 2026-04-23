@@ -21,33 +21,15 @@ export function Atelier() {
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?w=1400&q=85"
-            alt="The atelier table setting"
+            src="/images/CU04_couple_wineglass_silk_P.jpg"
+            alt="A couple toasting in the Silk Room at Yan Long"
             className="editorial-img"
           />
-          <span
-            style={{
-              position: "absolute",
-              bottom: 28,
-              left: 28,
-              background: "var(--paper)",
-              padding: "14px 18px",
-              fontFamily: "var(--font-sans)",
-              fontSize: 10,
-              letterSpacing: "0.3em",
-              color: "var(--aubergine)",
-              textTransform: "uppercase",
-              fontWeight: 500,
-              borderLeft: "2px solid var(--gold)",
-            }}
-          >
-            The Atelier · since 2019
-          </span>
         </div>
 
         <div>
           <div className="kicker" style={{ marginBottom: 20 }}>
-            L'Atelier · Bold Flavors, Authentic Recipes
+            Authentic Recipes
           </div>
           <h2
             className="h2-section"

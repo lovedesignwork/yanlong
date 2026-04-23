@@ -1,6 +1,6 @@
 /**
  * Email templates for general contact form submissions.
- * Maison editorial voice — sharp typography, gold + aubergine accents.
+ * Editorial voice — sharp typography, gold + aubergine accents.
  */
 
 export type ContactData = {
@@ -19,7 +19,7 @@ const fmt = (label: string, value?: string | null) =>
 
 export function contactToText(d: ContactData): string {
   const lines = [
-    "YAN LONG MAISON  ·  CONTACT REQUEST",
+    "YAN LONG PHUKET  ·  CONTACT REQUEST",
     "─────────────────────────────────────────────",
     "",
     "INQUIRY",
@@ -60,7 +60,7 @@ export function contactToHtml(d: ContactData): string {
         <!-- Header -->
         <tr><td style="padding:0 0 32px 0;text-align:center;border-bottom:1px solid rgba(33,28,26,.15)">
           <div style="font-family:Georgia,serif;font-size:36px;color:#5b1e5a;letter-spacing:.04em;font-weight:400">Yan Long</div>
-          <div style="font-family:Georgia,serif;font-style:italic;font-size:14px;color:#211c1a;letter-spacing:.4em;margin-top:8px">YAN · LONG · MAISON</div>
+          <div style="font-family:'Inter',sans-serif;font-size:11px;color:#211c1a;letter-spacing:.35em;margin-top:8px;font-weight:500">YAN LONG PHUKET</div>
           <div style="font-family:'Inter',sans-serif;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:#8a8278;margin-top:18px">Royal Phuket City Hotel · Phuket Old Town</div>
         </td></tr>
 

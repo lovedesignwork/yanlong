@@ -26,7 +26,7 @@ export function Reserve() {
             className="kicker"
             style={{ marginBottom: 24 }}
           >
-            La Réservation · Visit
+            Reservations
           </div>
           <h2
             className="h2-reserve"

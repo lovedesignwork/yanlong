@@ -34,7 +34,7 @@ export function Collection({
         >
           <div>
             <div className="kicker" style={{ marginBottom: 16 }}>
-              La Collection · The Menu
+              The Menu
             </div>
             <h2
               className="h2-section"
@@ -104,24 +104,6 @@ export function Collection({
                   position: "relative",
                 }}
               >
-                <span
-                  style={{
-                    position: "absolute",
-                    top: 20,
-                    left: 20,
-                    fontFamily: "var(--font-sans)",
-                    fontSize: 10,
-                    letterSpacing: "0.35em",
-                    color: "var(--paper)",
-                    textTransform: "uppercase",
-                    background: "rgba(91,30,90,0.88)",
-                    padding: "8px 12px",
-                    zIndex: 2,
-                    fontWeight: 500,
-                  }}
-                >
-                  {p.no} · {p.type}
-                </span>
                 {p.badge && (
                   <span
                     style={{
@@ -167,42 +149,10 @@ export function Collection({
                     color: "var(--ink-soft)",
                     fontWeight: 400,
                     letterSpacing: "0.01em",
-                    marginBottom: 20,
                   }}
                 >
                   {p.description}
                 </p>
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "baseline",
-                    paddingTop: 18,
-                    borderTop: "1px solid var(--line)",
-                  }}
-                >
-                  <span
-                    style={{
-                      fontFamily: "var(--font-serif)",
-                      fontSize: 24,
-                      color: "var(--gold)",
-                      fontStyle: "italic",
-                    }}
-                  >
-                    ฿ {p.priceTHB}
-                  </span>
-                  <span
-                    style={{
-                      fontFamily: "var(--font-sans)",
-                      fontSize: 10,
-                      letterSpacing: "0.3em",
-                      color: "var(--mute)",
-                      textTransform: "uppercase",
-                    }}
-                  >
-                    {p.region}
-                  </span>
-                </div>
               </div>
             </article>
           ))}

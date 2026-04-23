@@ -1,9 +1,9 @@
 "use client";
 
 /**
- * CalendarPicker — custom month-view date picker, Maison-styled.
+ * CalendarPicker — custom month-view date picker.
  *
- * Design system follows the Yan Long Maison aesthetic:
+ * Yan Long editorial design system:
  * - Sharp corners (no border-radius)
  * - Hairline borders, parchment background, ink text
  * - Cormorant Garamond italic month/year title
@@ -214,7 +214,7 @@ export default function CalendarPicker({
         </svg>
       </button>
 
-      {/* Popover calendar — Maison styled */}
+      {/* Popover calendar */}
       {open && (
         <div
           role="dialog"

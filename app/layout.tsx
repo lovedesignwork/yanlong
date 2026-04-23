@@ -4,7 +4,7 @@ import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Yan Long · Maison — Authentic Chinese Restaurant in Phuket Old Town",
+  title: "Yan Long — Authentic Chinese Restaurant in Phuket Old Town",
   description:
     "Yan Long is an authentic Chinese house in Phuket Old Town. Szechwan, Cantonese, Peking — by way of a state kitchen in Chengdu, 1998. Reservations: 061-172-9697.",
   keywords: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "Chinese fine dining Thailand",
   ],
   openGraph: {
-    title: "Yan Long · Maison",
+    title: "Yan Long Phuket",
     description:
       "An authentic Chinese house in Phuket Old Town. Food well told.",
     type: "website",
