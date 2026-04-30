@@ -1,7 +1,7 @@
 "use server";
 
 import { sendEmail } from "@/lib/email";
-import { insertSubmission } from "@/lib/supabase";
+import { insertContact } from "@/lib/supabase";
 import {
   contactToHtml,
   contactToText,
@@ -94,21 +94,16 @@ export async function submitContact(
 
   const subject = `New contact — ${data.inquiryType} — ${data.fullName}`;
 
-  // 1. Write to the shared admin database (RPCH admin picks it up from here).
-  const dbResult = await insertSubmission({
-    source: "yanlong",
+  // 1. Write to the yanlong_contact_submissions table (RPCH admin picks it up).
+  const dbResult = await insertContact({
     name: data.fullName,
     email: data.email,
     phone: data.phone,
     subject: data.subject || data.inquiryType,
     message: data.message,
     inquiry_type: mapInquiryType(data.inquiryType),
-    status: "new",
-    metadata: {
-      restaurant: "yanlong",
-      inquiryTypeLabel: data.inquiryType,
-      country: data.country,
-    },
+    inquiry_type_label: data.inquiryType,
+    country: data.country,
   });
 
   // 2. Email as a backup channel.

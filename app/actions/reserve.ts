@@ -1,7 +1,7 @@
 "use server";
 
 import { sendEmail } from "@/lib/email";
-import { insertSubmission } from "@/lib/supabase";
+import { insertReservation } from "@/lib/supabase";
 import {
   reservationToHtml,
   reservationToText,
@@ -108,38 +108,19 @@ export async function submitReservation(
   });
   const subject = `New reservation — ${data.fullName} · ${data.guests} guests · ${dateLong} · ${data.time}`;
 
-  // 1. Write to the shared admin database (RPCH admin picks it up from here).
-  const messageForAdmin = [
-    `Reservation: ${data.service} on ${dateLong} at ${data.time}`,
-    `Guests: ${data.guests}`,
-    data.occasion ? `Occasion: ${data.occasion}` : "",
-    data.room ? `Seating preference: ${data.room}` : "",
-    data.requests ? `\nSpecial requests:\n${data.requests}` : "",
-  ]
-    .filter(Boolean)
-    .join("\n");
-
-  const dbResult = await insertSubmission({
-    source: "yanlong",
-    name: data.fullName,
+  // 1. Write to the yanlong_reservations table (RPCH admin picks it up).
+  const dbResult = await insertReservation({
+    guest_name: data.fullName,
     email: data.email,
     phone: data.phone,
-    subject,
-    message: messageForAdmin,
-    inquiry_type: "reservation",
-    status: "new",
-    metadata: {
-      restaurant: "yanlong",
-      date: data.date,
-      dateLong,
-      time: data.time,
-      service: data.service,
-      guests: data.guests,
-      country: data.country,
-      room: data.room,
-      occasion: data.occasion,
-      requests: data.requests,
-    },
+    date: data.date,
+    time: data.time,
+    guests: Number(data.guests),
+    service: data.service,
+    occasion: data.occasion,
+    seating_preference: data.room,
+    country: data.country,
+    special_requests: data.requests,
   });
 
   // 2. Email as a backup channel (fires whenever RESEND_API_KEY is set).

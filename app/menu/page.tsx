@@ -5,7 +5,7 @@ import { Reserve } from "@/components/Reserve";
 export const metadata: Metadata = {
   title: "Menu — Yan Long · Authentic Chinese in Phuket",
   description:
-    "From classic dim sum to slow-simmered broths and rich stir-fries — and our signature Peking duck, Best in Thailand. Six regional traditions, one kitchen.",
+    "From classic dim sum to slow-simmered broths and rich stir-fries — and our signature Peking duck, Best in Thailand. Authentic Chinese flavors, crafted with care.",
 };
 
 export default function MenuPage() {
@@ -53,7 +53,7 @@ export default function MenuPage() {
               margin: "0 auto",
             }}
           >
-            A culinary{" "}
+            Authentic{" "}
             <em
               style={{
                 fontStyle: "italic",
@@ -61,11 +61,11 @@ export default function MenuPage() {
                 fontWeight: 400,
               }}
             >
-              journey,
-            </em>
+              Chinese
+            </em>{" "}
+            <span style={{ color: "var(--gold)" }}>flavors,</span>
             <br />
-            through{" "}
-            <span style={{ color: "var(--gold)" }}>six regions of China.</span>
+            crafted with care.
           </h1>
           <div
             style={{
@@ -116,7 +116,7 @@ export default function MenuPage() {
             from one kitchen.
           </>
         }
-        note="A selection from our printed menu — Northern, Szechwan, Cantonese, Shanghainese and Jiangsu kitchens, all served from the first floor of the Royal Phuket City Hotel."
+        note="A selection from our printed menu — Szechwan, Cantonese, and Peking traditions served from the first floor of the Royal Phuket City Hotel in Phuket Old Town."
       />
 
       <Reserve />

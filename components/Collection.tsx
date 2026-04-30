@@ -59,8 +59,8 @@ export function Collection({
                     signatures,
                   </em>
                   <br />
-                  from <span style={{ color: "var(--gold)" }}>six</span>{" "}
-                  regions.
+                  from{" "}
+                  <span style={{ color: "var(--gold)" }}>one</span> kitchen.
                 </>
               )}
             </h2>
@@ -79,6 +79,7 @@ export function Collection({
           >
             {note ??
               "From classic dim sum to slow-simmered broths and rich, savory stir-fries — and our signature Peking duck, the Best in Thailand. Six plates that hold the breadth of our kitchen."}
+
           </p>
         </div>
 
