@@ -1,8 +1,8 @@
-Replace placeholders with real food photography, simplify UI
+Integrate with Royal Phuket City Hotel Supabase database
 
-- Add 12 real Yan Long food photos to public/images
-- Update Collection plates with actual dish images (6:4 ratio)
-- Update Rooms section to use real dining room photos
-- Simplify Rooms to image gallery (remove cards)
-- Replace footer text logo with image
-- Remove Stats section from homepage
+- Add @supabase/supabase-js client
+- lib/supabase.ts: anon-key client with insertSubmission helper
+- Reservations and contact messages now write to shared contact_submissions
+  table tagged source='yanlong', so RPCH admin dashboard receives them
+- Keep Resend email delivery as backup channel
+- Reservation metadata (date/time/guests/occasion/requests) stored as JSONB

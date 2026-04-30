@@ -1,11 +1,26 @@
 "use server";
 
 import { sendEmail } from "@/lib/email";
+import { insertSubmission } from "@/lib/supabase";
 import {
   contactToHtml,
   contactToText,
   type ContactData,
 } from "@/lib/contact-template";
+
+/**
+ * Map the Yan Long public form's inquiry type to the admin inquiry_type
+ * enum (event / general / reservation / wedding). Anything unknown falls
+ * back to 'general'.
+ */
+function mapInquiryType(raw: string): string {
+  const v = raw.toLowerCase();
+  if (v.includes("reserv")) return "reservation";
+  if (v.includes("event") || v.includes("private") || v.includes("party"))
+    return "event";
+  if (v.includes("wedding") || v.includes("ceremony")) return "wedding";
+  return "general";
+}
 
 export type ContactActionState = {
   ok: boolean;
@@ -79,7 +94,25 @@ export async function submitContact(
 
   const subject = `New contact — ${data.inquiryType} — ${data.fullName}`;
 
-  const result = await sendEmail({
+  // 1. Write to the shared admin database (RPCH admin picks it up from here).
+  const dbResult = await insertSubmission({
+    source: "yanlong",
+    name: data.fullName,
+    email: data.email,
+    phone: data.phone,
+    subject: data.subject || data.inquiryType,
+    message: data.message,
+    inquiry_type: mapInquiryType(data.inquiryType),
+    status: "new",
+    metadata: {
+      restaurant: "yanlong",
+      inquiryTypeLabel: data.inquiryType,
+      country: data.country,
+    },
+  });
+
+  // 2. Email as a backup channel.
+  const emailResult = await sendEmail({
     to: CONTACT_TO,
     bcc: CONTACT_BCC || undefined,
     replyTo: data.email,
@@ -88,7 +121,7 @@ export async function submitContact(
     text: contactToText(data),
   });
 
-  if (!result.ok) {
+  if (!dbResult.ok && !emailResult.ok) {
     return {
       ok: false,
       message:
