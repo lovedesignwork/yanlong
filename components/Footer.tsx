@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { HOUSE } from "@/lib/content";
 
 export function Footer() {
@@ -19,18 +20,13 @@ export function Footer() {
           flexWrap: "wrap",
         }}
       >
-        <span
-          style={{
-            fontFamily: "var(--font-serif)",
-            fontStyle: "italic",
-            fontSize: 28,
-            color: "var(--gold)",
-            letterSpacing: "0.04em",
-            fontWeight: 400,
-          }}
-        >
-          Yan Long
-        </span>
+        <Image
+          src="/yan-long-logo.png"
+          alt="Yan Long"
+          width={120}
+          height={48}
+          style={{ objectFit: "contain" }}
+        />
         <span
           style={{
             fontFamily: "var(--font-sans)",

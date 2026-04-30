@@ -65,9 +65,7 @@ export const SIGNATURE_PLATES: Plate[] = [
       "Brined and air-dried for two days, then roasted to perfection — crispy skin, tender meat. The dish that earned us Best Peking Duck in Thailand.",
     priceTHB: 1980,
     region: "Northern",
-    // TODO: replace with real Peking Duck photography from Yan Long
-    image:
-      "https://images.unsplash.com/photo-1525755662778-989d0524087e?w=1200&q=85",
+    image: "/images/YL2_DUCK_dark_moody_resize.jpg",
     badge: "★ Best in Thailand",
   },
   {
@@ -78,8 +76,7 @@ export const SIGNATURE_PLATES: Plate[] = [
       "Silken tofu in a fiery sauce of fermented broad bean, Szechwan peppercorn and minced pork. Bold, numbing, unmistakably South-Western.",
     priceTHB: 380,
     region: "Szechwan",
-    image:
-      "https://images.unsplash.com/photo-1585032226651-759b368d7246?w=1200&q=85",
+    image: "/images/YL2_DONGPO_dark_moody_resize.jpg",
   },
   {
     no: "№ 03",
@@ -89,8 +86,7 @@ export const SIGNATURE_PLATES: Plate[] = [
       "Four baskets, four fillings — har gow, siu mai, pork bun, chive dumpling. Steamed to order, served with chrysanthemum tea.",
     priceTHB: 680,
     region: "Cantonese",
-    image:
-      "https://images.unsplash.com/photo-1563245372-f21724e3856d?w=1200&q=85",
+    image: "/images/YL2_CHARSIU_dark_moody_resize.jpg",
   },
   {
     no: "№ 04",
@@ -100,8 +96,7 @@ export const SIGNATURE_PLATES: Plate[] = [
       "Eighteen folds of thin wheat skin around a pork-and-ginger broth. Steamed six minutes, served instantly with fine ginger threads.",
     priceTHB: 320,
     region: "Shanghai",
-    image:
-      "https://images.unsplash.com/photo-1518983546435-91f8b87fe561?w=1200&q=85",
+    image: "/images/YL2_PIG_dark_moody_resize.jpg",
   },
   {
     no: "№ 05",
@@ -111,8 +106,7 @@ export const SIGNATURE_PLATES: Plate[] = [
       "Hand-pulled noodles fired in a carbon-steel wok with pork shoulder, scallion and dark soy. The breath of the wok at 800°C.",
     priceTHB: 460,
     region: "Cantonese",
-    image:
-      "https://images.unsplash.com/photo-1585032226651-759b368d7246?w=1200&q=85",
+    image: "/images/YL2_SSFISH_dark_moody_resize.jpg",
   },
   {
     no: "№ 06",
@@ -122,8 +116,7 @@ export const SIGNATURE_PLATES: Plate[] = [
       "Jasmine rice, lap cheong, shrimp, preserved vegetable, scallion. A classic of the Jiangsu kitchen, finished over open flame.",
     priceTHB: 380,
     region: "Jiangsu",
-    image:
-      "https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=1200&q=85",
+    image: "/images/YL2_SIUYUK_dark_moody_resize.jpg",
   },
 ];
 
@@ -144,24 +137,21 @@ export const ROOMS: Room[] = [
     capacity: "Main Dining · Family & Friends",
     description:
       "The principal room — a warm, refined space where families and friends gather to enjoy the authentic Chinese restaurant ambiance of Yan Long. Round tables, lazy-susan service, the unhurried rhythm of a long meal.",
-    image:
-      "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1400&q=85",
+    image: "/images/MD04_mother_serving_main_H.jpg",
   },
   {
     name: "Private Dining Room",
     capacity: "Private Dining · Intimate",
     description:
       "A curtained room for small celebrations, business dinners and intimate gatherings at the authentic Chinese restaurant in Phuket. Booked forty-eight hours in advance.",
-    image:
-      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1400&q=85",
+    image: "/images/WD04_gala_full_silk_room_H.jpg",
   },
   {
     name: "Celebration Hall",
     capacity: "Special Ceremony · Weddings & Events",
     description:
       "Celebrate your wedding, milestone birthday, or family reunion in our ceremonial hall. Multi-course service, tea ceremony on request, house-made longevity buns.",
-    image:
-      "https://images.unsplash.com/photo-1592861956120-e524fc739696?w=1400&q=85",
+    image: "/images/TEST3_family_silk_room_horizontal.jpg",
   },
 ];
 

@@ -99,7 +99,7 @@ export function Collection({
               <div
                 className="plate-img"
                 style={{
-                  aspectRatio: "5 / 6",
+                  aspectRatio: "6 / 4",
                   overflow: "hidden",
                   position: "relative",
                 }}
