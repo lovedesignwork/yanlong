@@ -35,7 +35,7 @@ export const NAV_LINKS = [
  */
 export const STATS = [
   { n: "★", label: "Best Peking Duck in Thailand" },
-  { n: "6", label: "Regions of Chinese tradition" },
+  { n: "25", suffix: "+", label: "Years of culinary heritage" },
   { n: "1", suffix: "ˢᵗ", label: "Floor · Royal Phuket City Hotel" },
   { n: "7", label: "Days a week · Open daily" },
 ] as const;

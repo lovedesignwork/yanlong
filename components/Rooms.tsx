@@ -34,9 +34,9 @@ export function Rooms() {
           className="gallery-grid"
           style={{
             display: "grid",
-            gridTemplateColumns: "1.3fr 1fr 1fr",
-            gap: 16,
-            alignItems: "stretch",
+            gridTemplateColumns: "1fr 1fr 1fr",
+            gap: 20,
+            alignItems: "start",
           }}
         >
           {ROOMS.map((r) => (
@@ -46,6 +46,7 @@ export function Rooms() {
                 aspectRatio: "6 / 4",
                 overflow: "hidden",
                 position: "relative",
+                borderRadius: 2,
               }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
