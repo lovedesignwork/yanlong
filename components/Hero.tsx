@@ -119,9 +119,9 @@ export function Hero() {
                 textShadow: PARCHMENT_HALO,
               }}
             >
-              An authentic Chinese restaurant in Phuket.
+              Authentic Cantonese cuisine in Phuket Old Town.
               <br />
-              Szechwan (South-Western China) style cuisine.
+              Home of the Best Peking Duck in Thailand.
             </p>
             <p
               style={{

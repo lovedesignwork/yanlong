@@ -91,10 +91,10 @@ export default function MenuPage() {
               fontWeight: 300,
             }}
           >
-            From the comforting warmth of Cantonese dim sum to the bold
-            intensity of Szechwan spice — and our signature Peking duck, the
-            Best in Thailand — every plate is crafted with fresh local
-            ingredients and authenticity. The full carte is presented at table.
+            From the comforting warmth of hand-folded dim sum to our signature
+            Peking duck — the Best in Thailand — every plate celebrates authentic
+            Cantonese tradition. Crafted with fresh local ingredients, served with
+            care. The full carte is presented at table.
           </p>
         </div>
       </section>
@@ -116,7 +116,7 @@ export default function MenuPage() {
             from one kitchen.
           </>
         }
-        note="A selection from our printed menu — Szechwan, Cantonese, and Peking traditions served from the first floor of the Royal Phuket City Hotel in Phuket Old Town."
+        note="A selection from our printed menu — Cantonese and Peking traditions served from the first floor of the Royal Phuket City Hotel in Phuket Old Town."
       />
 
       <Reserve />

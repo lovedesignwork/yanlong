@@ -7,7 +7,7 @@ import { Reserve } from "@/components/Reserve";
 export const metadata: Metadata = {
   title: "The Atelier — Bold Flavors, Authentic Recipes · Yan Long",
   description:
-    "The kitchen at Yan Long. Authentic Szechwan and regional Chinese cooking, passed down through generations. Three quiet inheritances: wok hei, the hand, and patience.",
+    "The kitchen at Yan Long. Authentic Cantonese cooking and the Best Peking Duck in Thailand, crafted with care. Three quiet inheritances: wok hei, the hand, and patience.",
 };
 
 export default function AtelierPage() {

@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Yan Long — Authentic Chinese Restaurant in Phuket Old Town",
   description:
-    "Yan Long is an authentic Chinese house in Phuket Old Town. Szechwan, Cantonese, Peking — by way of a state kitchen in Chengdu, 1998. Reservations: 061-172-9697.",
+    "Yan Long is an authentic Cantonese restaurant in Phuket Old Town, home of the Best Peking Duck in Thailand. First floor, Royal Phuket City Hotel. Reservations: 061-172-9697.",
   keywords: [
     "Chinese restaurant Phuket",
     "Yan Long",

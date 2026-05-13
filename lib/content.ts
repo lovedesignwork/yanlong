@@ -7,7 +7,7 @@
 export const HOUSE = {
   brand: { en: "YAN LONG PHUKET" },
   tagline: "Food Well Told",
-  positioning: "Authentic Szechwan · South-Western China",
+  positioning: "Authentic Cantonese & The Best Peking Duck",
   award: "★ Best Peking Duck in Thailand",
   phone: "061-172-9697",
   line: "@yanlong",
@@ -16,8 +16,8 @@ export const HOUSE = {
     line2: "Phangnga Road, Mueang Phuket District",
   },
   hours: {
-    daily: "Daily · 11:00 — 20:00",
-    lastOrder: "Last order at 8:00 PM",
+    daily: "Daily · 11:00 — 22:00",
+    lastOrder: "Last order at 9:30 PM",
   },
   signatureDish: "Peking Duck",
 } as const;
@@ -70,12 +70,12 @@ export const SIGNATURE_PLATES: Plate[] = [
   },
   {
     no: "№ 02",
-    type: "Hangzhou",
-    title: "Dongpo Pork",
+    type: "Cantonese",
+    title: "Hand-folded Dim Sum Selection",
     description:
-      "Slow-braised pork belly in rich soy and Shaoxing wine, simmered until meltingly tender. A legendary dish from Hangzhou, named after the poet Su Dongpo.",
+      "A curated selection of hand-folded dim sum — har gow, siu mai, and seasonal specialties. Steamed to order each morning by our dim sum master.",
     priceTHB: 450,
-    region: "Hangzhou",
+    region: "Cantonese",
     image: "/images/YL2_DONGPO_dark_moody_resize.jpg",
   },
   {
@@ -101,10 +101,10 @@ export const SIGNATURE_PLATES: Plate[] = [
   {
     no: "№ 05",
     type: "Cantonese",
-    title: "Steamed Sea Bass",
+    title: "Deep Fried Grouper Fish",
     description:
-      "Whole sea bass steamed with ginger, scallion and light soy. Delicate flesh, clean flavors — the Cantonese way with fresh fish.",
-    priceTHB: 100,
+      "Whole grouper fish deep fried until golden and crispy, served with sweet and sour sauce. A classic Cantonese preparation with bold, tangy flavors.",
+    priceTHB: 680,
     region: "Cantonese",
     image: "/images/YL2_SSFISH_dark_moody_resize.jpg",
   },
@@ -173,4 +173,5 @@ export const RESERVATION_ROWS = [
   },
   { k: "Hours", v: `${HOUSE.hours.daily}\n${HOUSE.hours.lastOrder}` },
   { k: "Dress", v: "Smart casual · No shorts at dinner" },
+  { k: "Parking", v: "Direct floor parking access\nEasy mobility support for elderly guests" },
 ] as const;

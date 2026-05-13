@@ -16,7 +16,7 @@ export function Feature() {
               letterSpacing: "-0.02em",
             }}
           >
-            A house of authentic{" "}
+            Authentic{" "}
             <em
               style={{
                 fontStyle: "italic",
@@ -24,7 +24,7 @@ export function Feature() {
                 fontWeight: 400,
               }}
             >
-              Szechwan,
+              Cantonese,
             </em>
             <br />
             in the heart of{" "}
