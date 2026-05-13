@@ -5,7 +5,7 @@ import { Reserve } from "@/components/Reserve";
 export const metadata: Metadata = {
   title: "Private Dining & Rooms — Yan Long Phuket",
   description:
-    "Three rooms, one kitchen. Private dining, celebrations, weddings and Lunar New Year at Yan Long, Royal Phuket City Hotel.",
+    "Four private rooms for business hosting, family reunions and celebrations. 3 Boutique Rooms (10 pax) and 1 Grand Room (50 pax) at Yan Long, Royal Phuket City Hotel.",
 };
 
 export default function RoomsPage() {
@@ -45,7 +45,7 @@ export default function RoomsPage() {
               margin: "0 auto",
             }}
           >
-            Three{" "}
+            Four{" "}
             <em
               style={{
                 fontStyle: "italic",
@@ -69,8 +69,8 @@ export default function RoomsPage() {
               fontWeight: 300,
             }}
           >
-            From a quiet table for two to a hundred-guest celebration. Each
-            room is dressed by the same hands and served by the same kitchen.
+            Perfect for business hosting, family reunions and birthday celebrations.
+            Each room is dressed by the same hands and served by the same kitchen.
             Private rooms are confirmed within two hours of request.
           </p>
         </div>

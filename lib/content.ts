@@ -128,32 +128,45 @@ export type Room = {
 };
 
 /**
- * Three private dining categories — from the original yanlongphuket.com:
- * "Private Dining Room", "Special Ceremony", and "Chinese Theme Restaurant".
+ * Four private dining rooms at Yan Long:
+ * 3 Boutique Rooms (10 pax each) + 1 Grand Room (50 pax)
  */
 export const ROOMS: Room[] = [
   {
-    name: "Main Dining Hall",
-    capacity: "Main Dining · Family & Friends",
+    name: "Boutique Room 1",
+    capacity: "Up to 10 guests",
     description:
-      "The principal room — a warm, refined space where families and friends gather to enjoy the authentic Chinese restaurant ambiance of Yan Long. Round tables, lazy-susan service, the unhurried rhythm of a long meal.",
+      "An intimate private space perfect for business hosting and small family gatherings. Min. spend ฿7,500–9,000.",
     image: "/images/MD04_mother_serving_main_H.jpg",
   },
   {
-    name: "Private Dining Room",
-    capacity: "Private Dining · Intimate",
+    name: "Boutique Room 2",
+    capacity: "Up to 10 guests",
     description:
-      "A curtained room for small celebrations, business dinners and intimate gatherings at the authentic Chinese restaurant in Phuket. Booked forty-eight hours in advance.",
+      "A refined setting for birthday celebrations and business dinners. Min. spend ฿7,500–9,000.",
     image: "/images/WD04_gala_full_silk_room_H.jpg",
   },
   {
-    name: "Celebration Hall",
-    capacity: "Special Ceremony · Weddings & Events",
+    name: "Boutique Room 3",
+    capacity: "Up to 10 guests",
     description:
-      "Celebrate your wedding, milestone birthday, or family reunion in our ceremonial hall. Multi-course service, tea ceremony on request, house-made longevity buns.",
+      "Private dining for intimate occasions and executive meetings. Min. spend ฿7,500–9,000.",
     image: "/images/TEST3_family_silk_room_horizontal.jpg",
   },
+  {
+    name: "Grand Room",
+    capacity: "Up to 50 guests",
+    description:
+      "Our largest private space for family reunions, corporate events and milestone celebrations. Min. spend ฿30,000.",
+    image: "/images/MD04_mother_serving_main_H.jpg",
+  },
 ];
+
+export const ROOM_OCCASIONS = [
+  "Business Hosting",
+  "Family Reunion", 
+  "Birthday Celebration",
+] as const;
 
 /**
  * Three culinary inheritances — universal kitchen craft language,
