@@ -65,18 +65,18 @@ export const SIGNATURE_PLATES: Plate[] = [
       "Brined and air-dried for two days, then roasted to perfection — crispy skin, tender meat. The dish that earned us Best Peking Duck in Thailand.",
     priceTHB: 1300,
     region: "Northern",
-    image: "/images/YL2_DUCK_dark_moody_resize.jpg",
+    image: "/images/NEW/Peking Duck.jpg",
     badge: "★ Best in Thailand",
   },
   {
     no: "№ 02",
     type: "Cantonese",
-    title: "Hand-folded Dim Sum Selection",
+    title: "Ha Gow",
     description:
-      "A curated selection of hand-folded dim sum — har gow, siu mai, and seasonal specialties. Steamed to order each morning by our dim sum master.",
-    priceTHB: 450,
+      "Crystal-skinned shrimp dumplings — our dim sum master's signature. Delicate, translucent wrappers filled with fresh prawns, steamed to perfection each morning.",
+    priceTHB: 180,
     region: "Cantonese",
-    image: "/images/YL2_DONGPO_dark_moody_resize.jpg",
+    image: "/images/NEW/HA-GAO.jpg",
   },
   {
     no: "№ 03",

@@ -73,6 +73,35 @@ export default function RoomsPage() {
             Each room is dressed by the same hands and served by the same kitchen.
             Private rooms are confirmed within two hours of request.
           </p>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              gap: 24,
+              marginTop: 60,
+              maxWidth: 900,
+              marginLeft: "auto",
+              marginRight: "auto",
+            }}
+          >
+            <div style={{ aspectRatio: "4 / 3", overflow: "hidden", borderRadius: 4 }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/NEW/Private room1.jpg"
+                alt="Private Dining Room 1"
+                className="editorial-img"
+              />
+            </div>
+            <div style={{ aspectRatio: "4 / 3", overflow: "hidden", borderRadius: 4 }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/NEW/Private room2.jpg"
+                alt="Private Dining Room 2"
+                className="editorial-img"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
