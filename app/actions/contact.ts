@@ -5,6 +5,8 @@ import { insertContact } from "@/lib/supabase";
 import {
   contactToHtml,
   contactToText,
+  contactConfirmToHtml,
+  contactConfirmToText,
   type ContactData,
 } from "@/lib/contact-template";
 
@@ -122,6 +124,19 @@ export async function submitContact(
 
   console.log(
     `[contact] Email result: ${JSON.stringify(emailResult)} — to ${CONTACT_TO.join(",")}`,
+  );
+
+  // 3. Send a confirmation copy to the sender (best-effort).
+  const confirmResult = await sendEmail({
+    to: data.email,
+    subject: `Yan Long — We received your message`,
+    html: contactConfirmToHtml(data),
+    text: contactConfirmToText(data),
+    replyTo: CONTACT_TO[0],
+  });
+
+  console.log(
+    `[contact] Sender confirm result: ${JSON.stringify(confirmResult)} — to ${data.email}`,
   );
 
   if (!dbResult.ok && !emailResult.ok) {

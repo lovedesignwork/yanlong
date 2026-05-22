@@ -51,6 +51,15 @@ export function contactToHtml(d: ContactData): string {
         </tr>`
       : "";
 
+  // For cells that already contain trusted HTML (links etc.) — skip escaping.
+  const rowHtml = (k: string, vHtml?: string | null) =>
+    vHtml
+      ? `<tr>
+          <td style="padding:10px 0;border-bottom:1px solid rgba(33,28,26,.12);font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:#aa8c30;width:140px;vertical-align:top">${k}</td>
+          <td style="padding:10px 0;border-bottom:1px solid rgba(33,28,26,.12);font-family:Georgia,serif;font-style:italic;font-size:18px;color:#211c1a;line-height:1.45">${vHtml}</td>
+        </tr>`
+      : "";
+
   return `<!doctype html>
 <html><body style="margin:0;padding:0;background:#f5efe3;font-family:Georgia,serif;color:#211c1a">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f5efe3">
@@ -80,8 +89,8 @@ export function contactToHtml(d: ContactData): string {
           <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
             <tr><td colspan="2" style="padding:18px 0 8px 0;font-family:'Inter',sans-serif;font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:#aa8c30;border-top:1px solid rgba(33,28,26,.15)">From</td></tr>
             ${row("Full Name", d.fullName)}
-            ${row("Email", `<a href="mailto:${escape(d.email)}" style="color:#5b1e5a;text-decoration:none">${escape(d.email)}</a>`)}
-            ${row("Phone", `<a href="tel:${escape(d.phone)}" style="color:#5b1e5a;text-decoration:none">${escape(d.phone)}</a>`)}
+            ${rowHtml("Email", `<a href="mailto:${escape(d.email)}" style="color:#5b1e5a;text-decoration:none">${escape(d.email)}</a>`)}
+            ${rowHtml("Phone", `<a href="tel:${escape(d.phone)}" style="color:#5b1e5a;text-decoration:none">${escape(d.phone)}</a>`)}
             ${row("Country", d.country)}
 
             <tr><td colspan="2" style="padding:28px 0 8px 0;font-family:'Inter',sans-serif;font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:#aa8c30">Inquiry</td></tr>
@@ -127,4 +136,120 @@ function escape(s: string): string {
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#39;");
+}
+
+/* =========================================================================
+ * Customer confirmation copy — sent to the sender after they submit.
+ * ========================================================================= */
+
+export function contactConfirmToText(d: ContactData): string {
+  return [
+    "YAN LONG PHUKET",
+    "Royal Phuket City Hotel · Phuket Old Town",
+    "─────────────────────────────────────────────",
+    "",
+    `Dear ${d.fullName},`,
+    "",
+    "Thank you for contacting Yan Long. Our team will reply within one",
+    "business day. A copy of your message is below for your records.",
+    "",
+    "YOUR INQUIRY",
+    `Type:        ${d.inquiryType}`,
+    d.subject ? `Subject:     ${d.subject}` : "",
+    "",
+    "MESSAGE",
+    `  ${d.message.replace(/\n/g, "\n  ")}`,
+    "",
+    "YOUR DETAILS",
+    `Name:        ${d.fullName}`,
+    `Email:       ${d.email}`,
+    `Phone:       ${d.phone}`,
+    d.country ? `Country:     ${d.country}` : "",
+    "",
+    "If your inquiry is urgent, please call us on 061-172-9697",
+    "(Daily 11:00 — 22:00).",
+    "",
+    "— The Yan Long Team",
+    "yanlongphuket.com",
+  ]
+    .filter((line) => line !== "")
+    .join("\n");
+}
+
+export function contactConfirmToHtml(d: ContactData): string {
+  const row = (k: string, v?: string | null) =>
+    v && v.trim()
+      ? `<tr>
+          <td style="padding:10px 0;border-bottom:1px solid rgba(33,28,26,.12);font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:#aa8c30;width:140px;vertical-align:top">${k}</td>
+          <td style="padding:10px 0;border-bottom:1px solid rgba(33,28,26,.12);font-family:Georgia,serif;font-style:italic;font-size:18px;color:#211c1a;line-height:1.45">${escape(v)}</td>
+        </tr>`
+      : "";
+
+  return `<!doctype html>
+<html><body style="margin:0;padding:0;background:#f5efe3;font-family:Georgia,serif;color:#211c1a">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f5efe3">
+    <tr><td align="center" style="padding:48px 16px">
+      <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;background:#f5efe3">
+
+        <!-- Header -->
+        <tr><td style="padding:0 0 32px 0;text-align:center;border-bottom:1px solid rgba(33,28,26,.15)">
+          <div style="font-family:Georgia,serif;font-size:36px;color:#5b1e5a;letter-spacing:.04em;font-weight:400">Yan Long</div>
+          <div style="font-family:'Inter',sans-serif;font-size:11px;color:#211c1a;letter-spacing:.35em;margin-top:8px;font-weight:500">YAN LONG PHUKET</div>
+          <div style="font-family:'Inter',sans-serif;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:#8a8278;margin-top:18px">Royal Phuket City Hotel · Phuket Old Town</div>
+        </td></tr>
+
+        <!-- Title -->
+        <tr><td style="padding:40px 0 8px 0">
+          <div style="font-family:'Inter',sans-serif;font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:#aa8c30;margin-bottom:14px">— Message Received —</div>
+          <div style="font-family:Georgia,serif;font-weight:300;font-size:38px;line-height:1.1;letter-spacing:-.01em;color:#211c1a">
+            Thank you, <em style="color:#5b1e5a;font-style:italic">${escape(d.fullName)}</em>.
+          </div>
+          <p style="font-family:Georgia,serif;font-size:17px;line-height:1.65;color:#3b3530;margin:24px 0 0">
+            Your message has been received. Our team will reply <strong style="color:#5b1e5a">within one business day</strong>. A copy of your inquiry is below for your records.
+          </p>
+        </td></tr>
+
+        <!-- Detail table -->
+        <tr><td style="padding:36px 0 0 0">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+            <tr><td colspan="2" style="padding:18px 0 8px 0;font-family:'Inter',sans-serif;font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:#aa8c30;border-top:1px solid rgba(33,28,26,.15)">Your Inquiry</td></tr>
+            ${row("Type", d.inquiryType)}
+            ${row("Subject", d.subject)}
+
+            <tr><td colspan="2" style="padding:28px 0 8px 0;font-family:'Inter',sans-serif;font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:#aa8c30">Your Message</td></tr>
+            <tr><td colspan="2" style="padding:18px 24px;background:rgba(91,30,90,0.04);border-left:2px solid #5b1e5a;font-family:Georgia,serif;font-size:17px;color:#211c1a;line-height:1.65;white-space:pre-wrap">${escape(d.message)}</td></tr>
+
+            <tr><td colspan="2" style="padding:28px 0 8px 0;font-family:'Inter',sans-serif;font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:#aa8c30">Your Details</td></tr>
+            ${row("Name", d.fullName)}
+            ${row("Email", d.email)}
+            ${row("Phone", d.phone)}
+            ${row("Country", d.country)}
+          </table>
+        </td></tr>
+
+        <!-- Contact -->
+        <tr><td style="padding:48px 0 0 0">
+          <div style="background:rgba(91,30,90,0.04);border-left:2px solid #5b1e5a;padding:20px 24px">
+            <div style="font-family:'Inter',sans-serif;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:#5b1e5a;margin-bottom:10px;font-weight:600">If your inquiry is urgent</div>
+            <div style="font-family:Georgia,serif;font-size:16px;color:#211c1a;line-height:1.65">
+              Please call us on
+              <a href="tel:+66611729697" style="color:#5b1e5a;text-decoration:none;font-weight:500">061-172-9697</a>.<br/>
+              We are open daily 11:00 — 22:00 (last order 21:30).
+            </div>
+          </div>
+        </td></tr>
+
+        <!-- Footer -->
+        <tr><td style="padding:48px 0 0 0;border-top:1px solid rgba(33,28,26,.15);margin-top:48px">
+          <div style="font-family:'Inter',sans-serif;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:#8a8278;line-height:1.7">
+            Yan Long Phuket · Royal Phuket City Hotel<br/>
+            154 Phang-Nga Road, Talad Yai, Muang, Phuket 83000<br/>
+            yanlongphuket.com · 061-172-9697 · LINE @yanlong
+          </div>
+        </td></tr>
+
+      </table>
+    </td></tr>
+  </table>
+</body></html>`;
 }

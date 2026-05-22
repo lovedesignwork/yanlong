@@ -5,6 +5,8 @@ import { insertReservation } from "@/lib/supabase";
 import {
   reservationToHtml,
   reservationToText,
+  reservationConfirmToHtml,
+  reservationConfirmToText,
   type ReservationData,
 } from "@/lib/reservation-template";
 
@@ -139,6 +141,20 @@ export async function submitReservation(
 
   console.log(
     `[reserve] Email result: ${JSON.stringify(emailResult)} — to ${RESERVATION_TO.join(",")}`,
+  );
+
+  // 3. Send a confirmation copy to the guest. We do not block the form on this
+  //    — the booking is already saved and the team is notified. Best-effort.
+  const confirmResult = await sendEmail({
+    to: data.email,
+    subject: `Yan Long — Your reservation request for ${dateLong}`,
+    html: reservationConfirmToHtml(data),
+    text: reservationConfirmToText(data),
+    replyTo: RESERVATION_TO[0],
+  });
+
+  console.log(
+    `[reserve] Guest confirm result: ${JSON.stringify(confirmResult)} — to ${data.email}`,
   );
 
   // Success if EITHER channel delivered. DB is primary, email is backup.
