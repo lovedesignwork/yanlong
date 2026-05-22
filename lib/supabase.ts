@@ -17,7 +17,12 @@ export function getSupabaseClient(): SupabaseClient | null {
 
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  if (!url || !key) return null;
+  if (!url || !key) {
+    console.error(
+      `[supabase] Missing env vars — NEXT_PUBLIC_SUPABASE_URL=${!!url}, NEXT_PUBLIC_SUPABASE_ANON_KEY=${!!key}`,
+    );
+    return null;
+  }
 
   client = createClient(url, key, {
     auth: { persistSession: false, autoRefreshToken: false },

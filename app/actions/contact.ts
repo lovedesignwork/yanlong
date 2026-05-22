@@ -106,6 +106,10 @@ export async function submitContact(
     country: data.country,
   });
 
+  console.log(
+    `[contact] DB result: ${JSON.stringify(dbResult)} — payload from ${data.email}`,
+  );
+
   // 2. Email as a backup channel.
   const emailResult = await sendEmail({
     to: CONTACT_TO,
@@ -116,7 +120,14 @@ export async function submitContact(
     text: contactToText(data),
   });
 
+  console.log(
+    `[contact] Email result: ${JSON.stringify(emailResult)} — to ${CONTACT_TO.join(",")}`,
+  );
+
   if (!dbResult.ok && !emailResult.ok) {
+    console.error(
+      `[contact] BOTH channels failed — db: ${dbResult.error}, email: ${emailResult.ok ? "ok" : emailResult.error}`,
+    );
     return {
       ok: false,
       message:

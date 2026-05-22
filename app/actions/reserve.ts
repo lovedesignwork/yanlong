@@ -123,6 +123,10 @@ export async function submitReservation(
     special_requests: data.requests,
   });
 
+  console.log(
+    `[reserve] DB result: ${JSON.stringify(dbResult)} — payload from ${data.email}`,
+  );
+
   // 2. Email as a backup channel (fires whenever RESEND_API_KEY is set).
   const emailResult = await sendEmail({
     to: RESERVATION_TO,
@@ -133,8 +137,15 @@ export async function submitReservation(
     text: reservationToText(data),
   });
 
+  console.log(
+    `[reserve] Email result: ${JSON.stringify(emailResult)} — to ${RESERVATION_TO.join(",")}`,
+  );
+
   // Success if EITHER channel delivered. DB is primary, email is backup.
   if (!dbResult.ok && !emailResult.ok) {
+    console.error(
+      `[reserve] BOTH channels failed — db: ${dbResult.error}, email: ${emailResult.ok ? "ok" : emailResult.error}`,
+    );
     return {
       ok: false,
       message:
