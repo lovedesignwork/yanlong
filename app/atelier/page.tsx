@@ -3,16 +3,25 @@ import { Feature } from "@/components/Feature";
 import { Atelier } from "@/components/Atelier";
 import { Stats } from "@/components/Stats";
 import { Reserve } from "@/components/Reserve";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "The Atelier — Bold Flavors, Authentic Recipes · Yan Long",
+  title: "The Atelier — Bold Flavors, Authentic Recipes",
   description:
     "The kitchen at Yan Long. Authentic Cantonese cooking and the Best Peking Duck in Thailand, crafted with care. Three quiet inheritances: wok hei, the hand, and patience.",
+  alternates: { canonical: "/atelier" },
 };
 
 export default function AtelierPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Food Well Told", path: "/atelier" },
+        ])}
+      />
       <section style={{ padding: "120px 0 40px" }}>
         <div className="container-maison" style={{ textAlign: "center" }}>
           <div

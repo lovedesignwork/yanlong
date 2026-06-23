@@ -2,15 +2,24 @@ import type { Metadata } from "next";
 import { Reserve } from "@/components/Reserve";
 import { BookingForm } from "@/components/BookingForm";
 import { HOUSE } from "@/lib/content";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Reserve a Table — Yan Long Phuket",
-  description: `Reserve a table at Yan Long, Royal Phuket City Hotel. Concierge ${HOUSE.phone} · LINE ${HOUSE.line}.`,
+  title: "Reserve a Table",
+  description: `Reserve a table at Yan Long, Royal Phuket City Hotel. Open daily 11:00–22:00. Concierge ${HOUSE.phone} · LINE ${HOUSE.line}.`,
+  alternates: { canonical: "/reserve" },
 };
 
 export default function ReservePage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Reserve", path: "/reserve" },
+        ])}
+      />
       {/* ============================ HERO ============================ */}
       <section style={{ padding: "120px 0 40px" }}>
         <div className="container-maison" style={{ textAlign: "center" }}>

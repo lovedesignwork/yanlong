@@ -1,16 +1,28 @@
 import type { Metadata } from "next";
 import { Collection } from "@/components/Collection";
 import { Reserve } from "@/components/Reserve";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema, menuSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Menu — Yan Long · Authentic Chinese in Phuket",
+  title: "Menu — Authentic Chinese in Phuket",
   description:
     "From classic dim sum to slow-simmered broths and rich stir-fries — and our signature Peking duck, Best in Thailand. Authentic Chinese flavors, crafted with care.",
+  alternates: { canonical: "/menu" },
 };
 
 export default function MenuPage() {
   return (
     <>
+      <JsonLd
+        data={[
+          menuSchema(),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Menu", path: "/menu" },
+          ]),
+        ]}
+      />
       <section style={{ padding: "120px 0 60px" }}>
         <div className="container-maison" style={{ textAlign: "center" }}>
           <div

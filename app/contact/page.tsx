@@ -2,10 +2,13 @@ import type { Metadata } from "next";
 import { ContactForm } from "@/components/ContactForm";
 import { Reserve } from "@/components/Reserve";
 import { HOUSE } from "@/lib/content";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Contact — Yan Long Phuket",
+  title: "Contact",
   description: `Get in touch with Yan Long, Royal Phuket City Hotel. Concierge ${HOUSE.phone} · LINE ${HOUSE.line}. For private functions, weddings, press and general inquiries.`,
+  alternates: { canonical: "/contact" },
 };
 
 const PRIMARY_EMAIL = "yanlong@royalphuketcity.com";
@@ -13,6 +16,12 @@ const PRIMARY_EMAIL = "yanlong@royalphuketcity.com";
 export default function ContactPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Contact", path: "/contact" },
+        ])}
+      />
       {/* ============================ HERO ============================ */}
       <section style={{ padding: "120px 0 40px" }}>
         <div className="container-maison" style={{ textAlign: "center" }}>

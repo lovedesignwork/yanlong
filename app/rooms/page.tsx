@@ -1,16 +1,25 @@
 import type { Metadata } from "next";
 import { Rooms } from "@/components/Rooms";
 import { Reserve } from "@/components/Reserve";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Private Dining & Rooms — Yan Long Phuket",
+  title: "Private Dining & Rooms",
   description:
     "Four private rooms for business hosting, family reunions and celebrations. 3 Boutique Rooms (10 pax) and 1 Grand Room (50 pax) at Yan Long, Royal Phuket City Hotel.",
+  alternates: { canonical: "/rooms" },
 };
 
 export default function RoomsPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Dining Rooms", path: "/rooms" },
+        ])}
+      />
       <section style={{ padding: "120px 0 40px" }}>
         <div className="container-maison" style={{ textAlign: "center" }}>
           <div

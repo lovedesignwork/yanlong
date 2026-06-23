@@ -4,6 +4,7 @@ import { Collection } from "@/components/Collection";
 import { Atelier } from "@/components/Atelier";
 import { Rooms } from "@/components/Rooms";
 import { Reserve } from "@/components/Reserve";
+import { Faq } from "@/components/Faq";
 
 export default function HomePage() {
   return (
@@ -13,6 +14,7 @@ export default function HomePage() {
       <Collection />
       <Atelier />
       <Rooms />
+      <Faq />
       <Reserve />
     </>
   );
