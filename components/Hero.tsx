@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 /**
  * Parchment-color halo so hero text stays legible against the photo.
@@ -22,17 +23,15 @@ export function Hero() {
         padding: "100px 0 110px",
       }}
     >
-      {/* ============ FULL-BLEED BACKGROUND IMAGE ============ */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
+      {/* ============ FULL-BLEED BACKGROUND IMAGE (LCP) ============ */}
+      <Image
         src="/images/main-image.jpg"
         alt=""
         aria-hidden="true"
+        fill
+        priority
+        sizes="100vw"
         style={{
-          position: "absolute",
-          inset: 0,
-          width: "100%",
-          height: "100%",
           objectFit: "cover",
           objectPosition: "center right",
           filter: "saturate(0.95) contrast(1.02)",

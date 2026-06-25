@@ -1,4 +1,5 @@
 import { HOUSE, RESERVATION_ROWS, SIGNATURE_PLATES } from "@/lib/content";
+import { EditorialImage } from "@/components/EditorialImage";
 
 export function Reserve() {
   return (
@@ -125,16 +126,16 @@ export function Reserve() {
         >
           <div
             style={{
+              position: "relative",
               aspectRatio: "4 / 3",
               overflow: "hidden",
               marginBottom: 28,
             }}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <EditorialImage
               src={SIGNATURE_PLATES[0].image}
-              alt="Peking Duck — Best in Thailand"
-              className="editorial-img"
+              alt="Peking Duck at Yan Long — Best Peking Duck in Thailand"
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
           </div>
           <h3

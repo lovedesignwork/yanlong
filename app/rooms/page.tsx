@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Rooms } from "@/components/Rooms";
 import { Reserve } from "@/components/Reserve";
 import { JsonLd } from "@/components/JsonLd";
+import { EditorialImage } from "@/components/EditorialImage";
 import { breadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -94,20 +95,32 @@ export default function RoomsPage() {
               marginRight: "auto",
             }}
           >
-            <div style={{ aspectRatio: "4 / 3", overflow: "hidden", borderRadius: 4 }}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+            <div
+              style={{
+                position: "relative",
+                aspectRatio: "4 / 3",
+                overflow: "hidden",
+                borderRadius: 4,
+              }}
+            >
+              <EditorialImage
                 src="/images/NEW/Private room1.jpg"
-                alt="Private Dining Room 1"
-                className="editorial-img"
+                alt="Private dining boutique room at Yan Long, Phuket Old Town"
+                sizes="(max-width: 768px) 100vw, 450px"
               />
             </div>
-            <div style={{ aspectRatio: "4 / 3", overflow: "hidden", borderRadius: 4 }}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+            <div
+              style={{
+                position: "relative",
+                aspectRatio: "4 / 3",
+                overflow: "hidden",
+                borderRadius: 4,
+              }}
+            >
+              <EditorialImage
                 src="/images/NEW/Private room2.jpg"
-                alt="Private Dining Room 2"
-                className="editorial-img"
+                alt="Grand private dining room set for an event at Yan Long, Phuket"
+                sizes="(max-width: 768px) 100vw, 450px"
               />
             </div>
           </div>

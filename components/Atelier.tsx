@@ -1,4 +1,5 @@
 import { PILLARS } from "@/lib/content";
+import { EditorialImage } from "@/components/EditorialImage";
 
 export function Atelier() {
   return (
@@ -19,11 +20,10 @@ export function Atelier() {
             overflow: "hidden",
           }}
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <EditorialImage
             src="/images/CU04_couple_wineglass_silk_P.jpg"
-            alt="A couple toasting in the Silk Room at Yan Long"
-            className="editorial-img"
+            alt="A couple toasting in the Silk Room at Yan Long, Phuket Old Town"
+            sizes="(max-width: 768px) 100vw, 45vw"
           />
         </div>
 

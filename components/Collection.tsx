@@ -1,4 +1,5 @@
 import { SIGNATURE_PLATES, type Plate } from "@/lib/content";
+import { EditorialImage } from "@/components/EditorialImage";
 
 type Props = {
   plates?: Plate[];
@@ -125,8 +126,11 @@ export function Collection({
                     {p.badge}
                   </span>
                 )}
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={p.image} alt={p.title} className="editorial-img" />
+                <EditorialImage
+                  src={p.image}
+                  alt={p.title}
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
               </div>
               <div style={{ padding: "28px 28px 32px" }}>
                 <h3

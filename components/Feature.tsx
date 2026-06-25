@@ -1,3 +1,5 @@
+import { EditorialImage } from "@/components/EditorialImage";
+
 export function Feature() {
   return (
     <section style={{ padding: "140px 0", position: "relative" }}>
@@ -134,13 +136,16 @@ export function Feature() {
           </div>
           <div
             className="gold-inset"
-            style={{ aspectRatio: "4 / 5", overflow: "hidden" }}
+            style={{
+              position: "relative",
+              aspectRatio: "4 / 5",
+              overflow: "hidden",
+            }}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <EditorialImage
               src="/images/CU03_child_dimsum_P.jpg"
-              alt="A young guest enjoying dim sum at Yan Long"
-              className="editorial-img"
+              alt="A young guest enjoying hand-folded dim sum at Yan Long, Phuket"
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
         </div>

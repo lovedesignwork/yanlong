@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
@@ -11,6 +12,22 @@ import {
   menuSchema,
   faqSchema,
 } from "@/lib/seo";
+
+// Self-hosted via next/font — no render-blocking external <link>, no layout shift.
+const serif = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  style: ["normal", "italic"],
+  variable: "--font-cormorant",
+  display: "swap",
+});
+
+const sans = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -33,6 +50,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/" },
   openGraph: {
+    // Social image resolved by app/opengraph-image.tsx (1200×630, branded).
     title: "Yan Long Phuket — Best Peking Duck in Thailand",
     description:
       "An authentic Cantonese house in Phuket Old Town. Home of the Best Peking Duck in Thailand. Food well told.",
@@ -40,21 +58,13 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     type: "website",
     locale: "en_US",
-    images: [
-      {
-        url: "/images/NEW/Peking Duck.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Peking Duck at Yan Long Phuket — Best in Thailand",
-      },
-    ],
   },
   twitter: {
+    // Twitter image falls back to app/opengraph-image.tsx automatically.
     card: "summary_large_image",
     title: "Yan Long Phuket — Best Peking Duck in Thailand",
     description:
       "Authentic Cantonese restaurant in Phuket Old Town. Royal Phuket City Hotel. Open daily.",
-    images: ["/images/NEW/Peking Duck.jpg"],
   },
   robots: {
     index: true,
@@ -76,18 +86,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${serif.variable} ${sans.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin=""
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap"
-          rel="stylesheet"
-        />
         <JsonLd
           data={[
             restaurantSchema(),
