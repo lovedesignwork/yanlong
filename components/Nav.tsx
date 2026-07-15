@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { NAV_LINKS } from "@/lib/content";
+import { MobileMenu } from "@/components/MobileMenu";
 
 export function Nav() {
   return (
@@ -79,7 +80,7 @@ export function Nav() {
           ))}
         </div>
 
-        {/* ============ RIGHT — RESERVE ============ */}
+        {/* ============ RIGHT — RESERVE + MOBILE TOGGLE ============ */}
         <div
           style={{
             display: "flex",
@@ -89,9 +90,10 @@ export function Nav() {
             gap: 20,
           }}
         >
-          <Link href="/reserve" className="btn btn-p">
+          <Link href="/reserve" className="btn btn-p nav-reserve">
             Reserve
           </Link>
+          <MobileMenu />
         </div>
       </div>
 

@@ -257,6 +257,17 @@ a {
   .nav-right-text {
     display: none !important;
   }
+  .nav-reserve {
+    display: none !important;
+  }
+  .nav-toggle {
+    display: inline-flex !important;
+  }
+}
+
+/* Mobile menu toggle — hidden on desktop, shown ≤768px (see media query). */
+.nav-toggle {
+  display: none;
 }
 
 /* ----------------------------------------------------------------------------
