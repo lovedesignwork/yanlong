@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { NAV_LINKS, HOUSE } from "@/lib/content";
 
 const EMAIL = "yanlong@royalphuketcity.com";
@@ -93,19 +94,16 @@ export function MobileMenu() {
           href="/"
           onClick={() => setIsOpen(false)}
           aria-label="Yan Long — Home"
-          style={{ lineHeight: 1, textDecoration: "none" }}
+          style={{ display: "block", lineHeight: 0, textDecoration: "none" }}
         >
-          <span
-            style={{
-              fontFamily: "var(--font-serif)",
-              fontSize: 30,
-              fontWeight: 400,
-              letterSpacing: "0.04em",
-              color: "var(--paper)",
-            }}
-          >
-            Yan Long
-          </span>
+          <Image
+            src="/yan-long-logo.png"
+            alt="Yan Long Chinese Restaurant"
+            width={1024}
+            height={256}
+            priority
+            style={{ height: 48, width: "auto", display: "block" }}
+          />
         </Link>
         <button
           type="button"
