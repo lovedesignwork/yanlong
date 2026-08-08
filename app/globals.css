@@ -263,6 +263,24 @@ a {
   .nav-toggle {
     display: inline-flex !important;
   }
+  /* Booking / contact pages — sidebar must not stick or overlap the form */
+  .reserve-aside {
+    position: static !important;
+    top: auto !important;
+    border-right: none !important;
+    padding-right: 0 !important;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 36px;
+  }
+  /* Form panel — reduce heavy desktop padding on small screens */
+  .form-panel {
+    padding: 32px 20px !important;
+  }
+  /* Form field grids — collapse fixed multi-column layouts to one column */
+  .form-grid-2,
+  .form-grid-3 {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 /* Mobile menu toggle — hidden on desktop, shown ≤768px (see media query). */

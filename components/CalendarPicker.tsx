@@ -224,7 +224,7 @@ export default function CalendarPicker({
             top: "calc(100% + 8px)",
             left: 0,
             zIndex: 100,
-            width: 360,
+            width: "min(360px, calc(100vw - 48px))",
             background: "var(--paper)",
             border: "1px solid var(--line)",
             padding: "28px 24px 22px",

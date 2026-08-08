@@ -132,7 +132,7 @@ export function BookingForm() {
           We are open <strong>daily, 11:00 — 20:00</strong> (last order at
           8:00 PM).
         </p>
-        <div style={triGrid}>
+        <div className="form-grid-3" style={triGrid}>
           <Field label="Date" error={state.errors?.date} hint="Today onwards">
             <CalendarPicker
               name="date"
@@ -177,7 +177,7 @@ export function BookingForm() {
       {/* SECTION 3 — GUEST INFO */}
       {/* ============================================================ */}
       <Section kicker="02 — Guest" title="Whose name shall we put on the table?">
-        <div style={duoGrid}>
+        <div className="form-grid-2" style={duoGrid}>
           <Field label="Full Name" error={state.errors?.fullName}>
             <input
               type="text"
@@ -225,7 +225,7 @@ export function BookingForm() {
         kicker="03 — Preferences"
         title="Anything we should know?"
       >
-        <div style={duoGrid}>
+        <div className="form-grid-2" style={duoGrid}>
           <Field label="Room Preference">
             <select name="room" defaultValue={ROOMS[0]} style={inputStyle}>
               {ROOMS.map((r) => (

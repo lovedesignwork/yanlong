@@ -91,7 +91,7 @@ export function ContactForm() {
       {/* SECTION 01 — INQUIRY */}
       {/* ============================================================ */}
       <Section kicker="01 — Inquiry" title="What can we help you with?">
-        <div style={duoGrid}>
+        <div className="form-grid-2" style={duoGrid}>
           <Field label="Inquiry Type">
             <select
               name="inquiryType"
@@ -120,7 +120,7 @@ export function ContactForm() {
       {/* SECTION 02 — YOU */}
       {/* ============================================================ */}
       <Section kicker="02 — You" title="How shall we reach you?">
-        <div style={duoGrid}>
+        <div className="form-grid-2" style={duoGrid}>
           <Field label="Full Name" error={state.errors?.fullName}>
             <input
               type="text"

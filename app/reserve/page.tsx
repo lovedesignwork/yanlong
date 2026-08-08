@@ -119,6 +119,7 @@ export default function ReservePage() {
           >
             {/* Sidebar — concierge details */}
             <aside
+              className="reserve-aside"
               style={{
                 position: "sticky",
                 top: 140,
@@ -166,6 +167,7 @@ export default function ReservePage() {
 
             {/* Form */}
             <div
+              className="form-panel"
               style={{
                 background: "var(--paper)",
                 padding: "56px 56px",

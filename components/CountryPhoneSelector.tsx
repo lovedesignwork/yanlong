@@ -267,7 +267,7 @@ export default function CountryPhoneSelector({
               position: "absolute",
               top: "calc(100% + 1px)",
               left: -1,
-              width: 320,
+              width: "min(320px, calc(100vw - 48px))",
               maxHeight: 360,
               background: "var(--paper)",
               border: "1px solid var(--line)",

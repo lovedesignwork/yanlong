@@ -124,6 +124,7 @@ export default function ContactPage() {
           >
             {/* Sidebar */}
             <aside
+              className="reserve-aside"
               style={{
                 position: "sticky",
                 top: 140,
@@ -193,6 +194,7 @@ export default function ContactPage() {
 
             {/* Form */}
             <div
+              className="form-panel"
               style={{
                 background: "var(--paper)",
                 padding: "56px 56px",
