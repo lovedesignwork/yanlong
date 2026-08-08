@@ -73,6 +73,7 @@ export function Atelier() {
           </p>
 
           <div
+            className="m-stack"
             style={{
               marginTop: 44,
               display: "grid",

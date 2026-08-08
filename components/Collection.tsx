@@ -67,6 +67,7 @@ export function Collection({
             </h2>
           </div>
           <p
+            className="collection-note"
             style={{
               fontFamily: "var(--font-sans)",
               fontSize: 15,

@@ -51,7 +51,7 @@ export function Feature() {
             alignItems: "center",
           }}
         >
-          <div style={{ padding: "0 40px" }}>
+          <div className="feature-copy" style={{ padding: "0 40px" }}>
             <h3
               style={{
                 fontFamily: "var(--font-serif)",

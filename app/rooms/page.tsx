@@ -85,6 +85,7 @@ export default function RoomsPage() {
           </p>
 
           <div
+            className="m-stack"
             style={{
               display: "grid",
               gridTemplateColumns: "1fr 1fr",

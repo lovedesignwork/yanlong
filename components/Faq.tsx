@@ -43,6 +43,7 @@ export function Faq() {
           </div>
           <h2
             id="faq-heading"
+            className="h2-section"
             style={{
               fontFamily: "var(--font-serif)",
               fontWeight: 300,

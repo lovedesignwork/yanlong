@@ -73,6 +73,7 @@ export function Reserve() {
             {RESERVATION_ROWS.map((r) => (
               <div
                 key={r.k}
+                className="res-row"
                 style={{
                   display: "grid",
                   gridTemplateColumns: "160px 1fr",
@@ -118,6 +119,7 @@ export function Reserve() {
         </div>
 
         <div
+          className="reserve-card"
           style={{
             background: "rgba(245,239,227,0.06)",
             border: "1px solid rgba(245,239,227,0.18)",

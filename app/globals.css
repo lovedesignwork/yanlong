@@ -281,6 +281,28 @@ a {
   .form-grid-3 {
     grid-template-columns: 1fr !important;
   }
+  /* Generic: stack any inline multi-column grid into one column */
+  .m-stack {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  /* Feature section copy — drop desktop inset so margins match the container */
+  .feature-copy {
+    padding: 0 !important;
+  }
+  /* Dark reservations card — lighter padding, keeps side margins balanced */
+  .reserve-card {
+    padding: 28px 20px !important;
+  }
+  /* Reservation info rows — narrower label column so values get room */
+  .res-row {
+    grid-template-columns: 110px 1fr !important;
+  }
+  /* Collection intro note — align left in single-column flow, not right */
+  .collection-note {
+    justify-self: start !important;
+    max-width: 100% !important;
+  }
 }
 
 /* Mobile menu toggle — hidden on desktop, shown ≤768px (see media query). */
