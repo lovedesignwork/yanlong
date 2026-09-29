@@ -170,6 +170,22 @@ npm run lint     # Next.js ESLint
 
 ## Deploy
 
+### Google Analytics
+
+The shared layout loads GA4 with measurement ID `G-S410KP4B9T` using
+`components/GoogleAnalytics.tsx`. Tracking runs only on `yanlongphuket.com`
+and `www.yanlongphuket.com`; localhost and Vercel preview URLs are excluded.
+The measurement ID is public and does not require an API key.
+
+Keep **Enhanced measurement → Page views → Page changes based on browser
+history events** enabled in the GA4 web stream so navigation between Next.js
+pages is tracked without duplicate manual page-view events.
+
+After deployment, use the stream's **Test installation** and **Realtime**
+report to verify collection while visiting the live website.
+
+### Vercel
+
 Designed to deploy to **[Vercel](https://vercel.com)** with zero config.
 
 ```bash
