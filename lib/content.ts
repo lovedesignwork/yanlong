@@ -27,6 +27,7 @@ export const NAV_LINKS = [
   { href: "/menu", label: "Menu" },
   { href: "/atelier", label: "Food Well Told" },
   { href: "/rooms", label: "Dining Rooms" },
+  { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
 ] as const;
 

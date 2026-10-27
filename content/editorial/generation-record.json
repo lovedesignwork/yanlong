@@ -1,0 +1,130 @@
+{
+  "requestedModel": "nano_banana_pro",
+  "style": "Create an original photorealistic editorial food illustration for Yan Long's restaurant blog. Reference images establish only tableware, materials and lighting; do NOT duplicate their photograph or identifiable rooms. Use white linen, white porcelain, dark wood, natural warm light. 85mm lens, shallow depth of field, close framing with very little background. No text, logos, watermark, staff, identifiable guests, new facilities or excessive props. Authentic food proportions, tactile realistic details, not CGI. ",
+  "prompts": [
+    {
+      "index": 1,
+      "subject": "Tight close-up of one thin Peking duck pancake open on a plain white porcelain plate, three small pieces of crisp amber duck skin, fine cucumber and spring onion batons, a modest brush of dark sauce. No hands. A different new composition, not a crop of the supplied duck platter."
+    },
+    {
+      "index": 2,
+      "subject": "Close-up of a small bamboo steamer holding three translucent pleated har gow shrimp dumplings, beside a white porcelain cup of amber tea on white linen; steam subtle, natural imperfections. No hands."
+    },
+    {
+      "index": 3,
+      "subject": "Close-up of an unoccupied individual place setting for a private Chinese dinner: folded ivory linen napkin, stacked white porcelain plates, white tea cup, dark chopsticks, just an arc of the glass lazy Susan. A red-gold patterned silk wall appears only as completely indistinct bokeh."
+    },
+    {
+      "index": 4,
+      "subject": "Close-up of several white bowls and serving spoons around a shared platter of golden crispy pork belly and leafy greens for a birthday meal. Food and table only, no cake, no candles, no people. Warm blurred red and gold background."
+    },
+    {
+      "index": 5,
+      "subject": "Close-up of a simple business lunch table with a small bamboo steamer, two white teacups of amber tea, dark chopsticks resting neatly and an empty white side plate. White linen, muted charcoal and gold bokeh, no screens, paperwork, letters or people."
+    },
+    {
+      "index": 6,
+      "subject": "Close-up of serving spoon beside a small white bowl of rice and a sharing plate of lightly cooked green vegetables, with a second plain small bowl in soft focus. Inviting family meal still life on white linen, green and warm wood bokeh. No people or hands."
+    },
+    {
+      "index": 7,
+      "subject": "Close-up of two individual white porcelain place settings with a modest central plate of honey-glazed char siu slices and a small bowl of vegetables, arranged for a quiet dinner for two. No people, no wine or candle props. White linen and warm blurred wood."
+    },
+    {
+      "index": 8,
+      "subject": "Close-up of Cantonese roast duck chopped crosswise into thick bone-in pieces, with amber skin and pale brown juicy meat clearly visible, arranged simply on an oval white porcelain platter with a small pool of roasting juices. No pancakes. Honest restaurant food photography."
+    },
+    {
+      "index": 9,
+      "subject": "Close-up of delicate thin slices of Peking duck skin and meat on a small white plate beside two thin pancakes and cucumber batons, emphasizing thin slicing and crisp skin rather than a whole bird. No people."
+    },
+    {
+      "index": 10,
+      "subject": "Overhead close-up of a few distinctly different Cantonese dishes for menu planning: small plate of golden crispy pork belly cubes, small bamboo steamer of shrimp dumplings, and white bowl of leafy greens. Each dish separated and realistically portioned, all on white linen. No people."
+    }
+  ],
+  "jobs": [
+    {
+      "index": 1,
+      "job_id": "ab8a168c-5ecd-48d0-88bf-054228d98189",
+      "status": "completed",
+      "type": "image",
+      "model": "nano_banana_2",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_2zQ06bI7F4gbUhQQ1hjrjWxqANK/hf_20261027_170405_ab8a168c-5ecd-48d0-88bf-054228d98189.png"
+    },
+    {
+      "index": 2,
+      "job_id": "d7ae850e-0ba5-4dc7-97ed-1db708e902e7",
+      "status": "completed",
+      "type": "image",
+      "model": "nano_banana_2",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_2zQ06bI7F4gbUhQQ1hjrjWxqANK/hf_20261027_170405_d7ae850e-0ba5-4dc7-97ed-1db708e902e7.png"
+    },
+    {
+      "index": 3,
+      "job_id": "606e0b44-7e5e-4484-a194-69245556d2a5",
+      "status": "completed",
+      "type": "image",
+      "model": "nano_banana_2",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_2zQ06bI7F4gbUhQQ1hjrjWxqANK/hf_20261027_170407_606e0b44-7e5e-4484-a194-69245556d2a5.png"
+    },
+    {
+      "index": 4,
+      "job_id": "9aaa4b21-0e34-472d-ac0f-cabc97750a41",
+      "status": "completed",
+      "type": "image",
+      "model": "nano_banana_2",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_2zQ06bI7F4gbUhQQ1hjrjWxqANK/hf_20261027_170405_9aaa4b21-0e34-472d-ac0f-cabc97750a41.png"
+    },
+    {
+      "index": 5,
+      "job_id": "262222b2-2d24-4fbd-853a-41310f050100",
+      "status": "completed",
+      "type": "image",
+      "model": "nano_banana_2",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_2zQ06bI7F4gbUhQQ1hjrjWxqANK/hf_20261027_170406_262222b2-2d24-4fbd-853a-41310f050100.png"
+    },
+    {
+      "index": 6,
+      "job_id": "1c7638cb-3e3c-4bec-9a09-91eddbda2d0b",
+      "status": "completed",
+      "type": "image",
+      "model": "nano_banana_2",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_2zQ06bI7F4gbUhQQ1hjrjWxqANK/hf_20261027_170406_1c7638cb-3e3c-4bec-9a09-91eddbda2d0b.png"
+    },
+    {
+      "index": 7,
+      "job_id": "7ce8831a-5057-45c9-bb8e-eac9b3ae1a0c",
+      "status": "completed",
+      "type": "image",
+      "model": "nano_banana_2",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_2zQ06bI7F4gbUhQQ1hjrjWxqANK/hf_20261027_170441_7ce8831a-5057-45c9-bb8e-eac9b3ae1a0c.png"
+    },
+    {
+      "index": 8,
+      "job_id": "1796c37f-60a2-4a71-ac4a-8e2965cc616a",
+      "status": "completed",
+      "type": "image",
+      "model": "nano_banana_2",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_2zQ06bI7F4gbUhQQ1hjrjWxqANK/hf_20261027_170440_1796c37f-60a2-4a71-ac4a-8e2965cc616a.png"
+    },
+    {
+      "index": 9,
+      "job_id": "e602f522-2d93-46e1-929e-45e71a482dd1",
+      "status": "completed",
+      "type": "image",
+      "model": "nano_banana_2",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_2zQ06bI7F4gbUhQQ1hjrjWxqANK/hf_20261027_170440_e602f522-2d93-46e1-929e-45e71a482dd1.png"
+    },
+    {
+      "index": 10,
+      "job_id": "a7f3d900-8f22-4103-be28-92716133cfab",
+      "status": "completed",
+      "type": "image",
+      "model": "nano_banana_2",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_2zQ06bI7F4gbUhQQ1hjrjWxqANK/hf_20261027_170440_a7f3d900-8f22-4103-be28-92716133cfab.png"
+    }
+  ],
+  "useApprovedByUser": true,
+  "approvalNote": "User approved using these Higgsfield results after being informed that requested nano_banana_pro jobs were reported as nano_banana_2."
+}

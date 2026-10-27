@@ -11,7 +11,6 @@ import {
   restaurantSchema,
   websiteSchema,
   menuSchema,
-  faqSchema,
 } from "@/lib/seo";
 
 // Self-hosted via next/font — no render-blocking external <link>, no layout shift.
@@ -94,7 +93,6 @@ export default function RootLayout({
             restaurantSchema(),
             websiteSchema(),
             menuSchema(),
-            faqSchema(),
           ]}
         />
       </head>

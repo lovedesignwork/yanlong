@@ -1,4 +1,5 @@
-import { FAQS } from "@/lib/seo";
+import { JsonLd } from "@/components/JsonLd";
+import { FAQS, faqSchema } from "@/lib/seo";
 
 /**
  * Visible FAQ section. The on-page copy mirrors the FAQPage JSON-LD exactly,
@@ -12,6 +13,7 @@ export function Faq() {
       aria-labelledby="faq-heading"
       style={{ padding: "140px 0", background: "var(--paper)" }}
     >
+      <JsonLd data={faqSchema()} />
       <div className="container-maison">
         <div style={{ textAlign: "center", marginBottom: 64 }}>
           <div

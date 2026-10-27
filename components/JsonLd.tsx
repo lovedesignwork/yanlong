@@ -11,7 +11,7 @@ export function JsonLd({ data }: { data: object | object[] }) {
           key={i}
           type="application/ld+json"
           // Structured data is generated from trusted, in-repo content.
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(item) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(item).replace(/</g, "\\u003c") }}
         />
       ))}
     </>

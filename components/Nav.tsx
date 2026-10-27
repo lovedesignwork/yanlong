@@ -12,6 +12,7 @@ export function Nav() {
         position: "sticky",
         top: 0,
         zIndex: 50,
+        boxShadow: "0 4px 18px rgba(33,28,26,0.05)",
         background: "rgba(245,239,227,0.95)",
         backdropFilter: "blur(10px)",
         WebkitBackdropFilter: "blur(10px)",
